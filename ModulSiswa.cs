@@ -316,9 +316,19 @@ namespace Ibuprofen
                 $" WHERE ID_Siswa='{studentId}' AND ID_Mapel='{courseId}'";
             using (SqlCommand cmd = new SqlCommand(q, connection))
             {
-                cmd.ExecuteNonQuery();
-            }
+                int result = cmd.ExecuteNonQuery();
+                if(result == 0)
+                {
+                    q = $"INSERT INTO {SCORE_TABLE}" +
+                        $" ID_Siswa, ID_Mapel, Ujian, Remedial, Tugas, Tugas_Tambahan " +
+                        $" VALUES ('{studentId}', '{courseId}', " +
+                        $" '{nudUjian.Value}', '{nudRemedial.Value}', " +
+                        $" '{nudTugas.Value}', '{nudTugasP.Value}') ";
 
+                    cmd.CommandText = q;
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         private void UpdateStudent(SqlConnection connection)
