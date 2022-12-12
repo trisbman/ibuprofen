@@ -60,7 +60,7 @@ namespace Ibuprofen
             this.button4.TabIndex = 5;
             this.button4.Text = "Logout";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.logout);
+            this.button4.Click += new System.EventHandler(this.Logout);
             // 
             // groupBox2
             // 

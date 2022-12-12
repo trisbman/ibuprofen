@@ -126,7 +126,7 @@ namespace Ibuprofen
         }
         #endregion
 
-        private void logout(object sender, EventArgs e)
+        private void Logout(object sender, EventArgs e)
         {
             Dispose();
             Close();

@@ -301,7 +301,7 @@ namespace Ibuprofen
             this.nudRemedial.Name = "nudRemedial";
             this.nudRemedial.Size = new System.Drawing.Size(324, 26);
             this.nudRemedial.TabIndex = 1;
-            this.nudRemedial.ValueChanged += new System.EventHandler(this.ToggleUnsavedChange);
+            this.nudRemedial.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
             // 
             // label13
             // 
@@ -320,7 +320,7 @@ namespace Ibuprofen
             this.nudUjian.Name = "nudUjian";
             this.nudUjian.Size = new System.Drawing.Size(324, 26);
             this.nudUjian.TabIndex = 1;
-            this.nudUjian.ValueChanged += new System.EventHandler(this.ToggleUnsavedChange);
+            this.nudUjian.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
             // 
             // label12
             // 
@@ -339,7 +339,7 @@ namespace Ibuprofen
             this.nudTugasP.Name = "nudTugasP";
             this.nudTugasP.Size = new System.Drawing.Size(324, 26);
             this.nudTugasP.TabIndex = 1;
-            this.nudTugasP.ValueChanged += new System.EventHandler(this.ToggleUnsavedChange);
+            this.nudTugasP.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
             // 
             // label14
             // 
@@ -368,7 +368,7 @@ namespace Ibuprofen
             this.nudTugas.Name = "nudTugas";
             this.nudTugas.Size = new System.Drawing.Size(324, 26);
             this.nudTugas.TabIndex = 1;
-            this.nudTugas.ValueChanged += new System.EventHandler(this.ToggleUnsavedChange);
+            this.nudTugas.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
             // 
             // label10
             // 
@@ -583,7 +583,7 @@ namespace Ibuprofen
             this.button3.TabIndex = 5;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.logout);
+            this.button3.Click += new System.EventHandler(this.Logout);
             // 
             // ModulSiswa
             // 

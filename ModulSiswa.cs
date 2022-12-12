@@ -23,7 +23,7 @@ namespace Ibuprofen
 
         readonly char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
-        bool UnsavedChange = false;
+        bool UnsavedChanges = false;
 
         public ModulSiswa()
         {
@@ -164,7 +164,7 @@ namespace Ibuprofen
         private void cboMapel_SelectedIndexChanged(object sender, EventArgs e)
         {
             // check if unsaved changes
-            if (UnsavedChange)
+            if (UnsavedChanges)
             {
                 DialogResult dialogResult = MessageBox.Show("Perubahan Anda akan terhapus. Yakin ingin mengubah mata pelajaran?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
@@ -351,37 +351,17 @@ namespace Ibuprofen
         }
         #endregion
 
-        private void ToggleUnsavedChange(object sender, EventArgs e)
+        private void ToggleUnsavedChanges(object sender, EventArgs e)
         {
-            UnsavedChange = !UnsavedChange;
+            UnsavedChanges = !UnsavedChanges;
         }
 
-        private void Clear()
-        {
-            txtNisn.Text = "";
-            txtNama.Text = "";
-            cboJk.Text = "";
-            cboKelas.Text = "";
-            txtTtl.Text = "";
-            txtNotelp.Text = "";
-
-            cboMapel.Text = "";
-            nudTugas.Value = 0;
-            nudTugasP.Value = 0;
-            nudUjian.Value = 0;
-            nudRemedial.Value = 0;
-
-            cboMapel.SelectedIndex = 0;
-            cboStatus.SelectedIndex = 0;
-        }
-
-        private void logout(object sender, EventArgs e)
+        private void Logout(object sender, EventArgs e)
         {
             Dispose();
             Close();
             Login login = new Login();
             login.ShowDialog();
         }
-
     }
 }
