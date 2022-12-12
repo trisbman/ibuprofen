@@ -31,7 +31,7 @@ namespace Ibuprofen
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabData = new System.Windows.Forms.TabPage();
-            this.cboKls = new System.Windows.Forms.ComboBox();
+            this.cboKelas = new System.Windows.Forms.ComboBox();
             this.btnUbah = new System.Windows.Forms.Button();
             this.cboJk = new System.Windows.Forms.ComboBox();
             this.txtNotelp = new System.Windows.Forms.TextBox();
@@ -68,8 +68,8 @@ namespace Ibuprofen
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstSiswa = new System.Windows.Forms.ListBox();
-            this.cboTingkat = new System.Windows.Forms.ComboBox();
-            this.cboKelas = new System.Windows.Forms.ComboBox();
+            this.cboTingkatFilter = new System.Windows.Forms.ComboBox();
+            this.cboKelasFilter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,7 +100,7 @@ namespace Ibuprofen
             // 
             // tabData
             // 
-            this.tabData.Controls.Add(this.cboKls);
+            this.tabData.Controls.Add(this.cboKelas);
             this.tabData.Controls.Add(this.btnUbah);
             this.tabData.Controls.Add(this.cboJk);
             this.tabData.Controls.Add(this.txtNotelp);
@@ -121,17 +121,17 @@ namespace Ibuprofen
             this.tabData.Text = "Ubah Data";
             this.tabData.UseVisualStyleBackColor = true;
             // 
-            // cboKls
+            // cboKelas
             // 
-            this.cboKls.FormattingEnabled = true;
-            this.cboKls.Items.AddRange(new object[] {
+            this.cboKelas.FormattingEnabled = true;
+            this.cboKelas.Items.AddRange(new object[] {
             "A",
             "B",
             "C"});
-            this.cboKls.Location = new System.Drawing.Point(154, 169);
-            this.cboKls.Name = "cboKls";
-            this.cboKls.Size = new System.Drawing.Size(282, 21);
-            this.cboKls.TabIndex = 16;
+            this.cboKelas.Location = new System.Drawing.Point(154, 169);
+            this.cboKelas.Name = "cboKelas";
+            this.cboKelas.Size = new System.Drawing.Size(282, 21);
+            this.cboKelas.TabIndex = 16;
             // 
             // btnUbah
             // 
@@ -170,6 +170,7 @@ namespace Ibuprofen
             // 
             // txtTtl
             // 
+            this.txtTtl.Enabled = false;
             this.txtTtl.Location = new System.Drawing.Point(154, 211);
             this.txtTtl.Name = "txtTtl";
             this.txtTtl.Size = new System.Drawing.Size(282, 20);
@@ -449,8 +450,8 @@ namespace Ibuprofen
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lstSiswa);
-            this.groupBox2.Controls.Add(this.cboTingkat);
-            this.groupBox2.Controls.Add(this.cboKelas);
+            this.groupBox2.Controls.Add(this.cboTingkatFilter);
+            this.groupBox2.Controls.Add(this.cboKelasFilter);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -470,31 +471,31 @@ namespace Ibuprofen
             this.lstSiswa.TabIndex = 3;
             this.lstSiswa.SelectedIndexChanged += new System.EventHandler(this.lstSiswa_SelectedIndexChanged);
             // 
-            // cboTingkat
+            // cboTingkatFilter
             // 
-            this.cboTingkat.FormattingEnabled = true;
-            this.cboTingkat.Items.AddRange(new object[] {
+            this.cboTingkatFilter.FormattingEnabled = true;
+            this.cboTingkatFilter.Items.AddRange(new object[] {
             "10",
             "11",
             "12"});
-            this.cboTingkat.Location = new System.Drawing.Point(25, 59);
-            this.cboTingkat.Name = "cboTingkat";
-            this.cboTingkat.Size = new System.Drawing.Size(217, 21);
-            this.cboTingkat.TabIndex = 0;
-            this.cboTingkat.SelectedIndexChanged += new System.EventHandler(this.cboTingkat_SelectedIndexChanged);
+            this.cboTingkatFilter.Location = new System.Drawing.Point(25, 59);
+            this.cboTingkatFilter.Name = "cboTingkatFilter";
+            this.cboTingkatFilter.Size = new System.Drawing.Size(217, 21);
+            this.cboTingkatFilter.TabIndex = 0;
+            this.cboTingkatFilter.SelectedIndexChanged += new System.EventHandler(this.cboTingkat_SelectedIndexChanged);
             // 
-            // cboKelas
+            // cboKelasFilter
             // 
-            this.cboKelas.FormattingEnabled = true;
-            this.cboKelas.Items.AddRange(new object[] {
+            this.cboKelasFilter.FormattingEnabled = true;
+            this.cboKelasFilter.Items.AddRange(new object[] {
             "A",
             "B",
             "C"});
-            this.cboKelas.Location = new System.Drawing.Point(25, 117);
-            this.cboKelas.Name = "cboKelas";
-            this.cboKelas.Size = new System.Drawing.Size(217, 21);
-            this.cboKelas.TabIndex = 0;
-            this.cboKelas.SelectedIndexChanged += new System.EventHandler(this.cboKelas_SelectedIndexChanged);
+            this.cboKelasFilter.Location = new System.Drawing.Point(25, 117);
+            this.cboKelasFilter.Name = "cboKelasFilter";
+            this.cboKelasFilter.Size = new System.Drawing.Size(217, 21);
+            this.cboKelasFilter.TabIndex = 0;
+            this.cboKelasFilter.SelectedIndexChanged += new System.EventHandler(this.cboKelas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -572,8 +573,8 @@ namespace Ibuprofen
         private System.Windows.Forms.Button btnUbah;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lstSiswa;
-        private System.Windows.Forms.ComboBox cboTingkat;
-        private System.Windows.Forms.ComboBox cboKelas;
+        private System.Windows.Forms.ComboBox cboTingkatFilter;
+        private System.Windows.Forms.ComboBox cboKelasFilter;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -606,7 +607,7 @@ namespace Ibuprofen
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cboKls;
+        private System.Windows.Forms.ComboBox cboKelas;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
     }

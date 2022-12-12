@@ -16,12 +16,10 @@ namespace Ibuprofen
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
         private readonly string LOGIN_TABLE = "tbl_user";
-        public Login loginForm;
 
         public Login()
         {
             InitializeComponent();
-            loginForm = this;
         }
 
         private DataRow Authenticate()
@@ -56,6 +54,8 @@ namespace Ibuprofen
             Hide();
             MainMenu mainMenu = new MainMenu(txtUsername.Text);
             mainMenu.ShowDialog();
+            Dispose();
+            Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

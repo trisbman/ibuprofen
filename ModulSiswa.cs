@@ -26,6 +26,7 @@ namespace Ibuprofen
 
         readonly DataSet dataSet = new DataSet();
         DataViewManager dsView;
+        SqlDataAdapter adapter;
 
         readonly char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
@@ -36,7 +37,7 @@ namespace Ibuprofen
 
         private void ModulSiswa_Load(object sender, EventArgs e)
         {
-            LoadData();            
+            LoadData();
         }
 
         private void LoadData()
@@ -47,7 +48,7 @@ namespace Ibuprofen
 
                 #region load data from db
                 SqlCommand command = new SqlCommand("SELECT * FROM " + GRADE_TABLE, connection);
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter = new SqlDataAdapter(command);
                 adapter.Fill(dataSet, GRADE_TABLE);
 
                 command = new SqlCommand("SELECT * FROM " + STUDENT_TABLE, connection);
@@ -97,9 +98,9 @@ namespace Ibuprofen
                 dataSet.Relations.Add(STUDENT_SCORE_RELATION, studentKey[0], scoreKey[0]);
                 #endregion
 
-                cboTingkat.DataSource = dsView;
-                cboTingkat.DisplayMember = GRADE_TABLE + ".tingkat";
-                cboTingkat.ValueMember = GRADE_TABLE + ".tingkat";
+                cboTingkatFilter.DataSource = dsView;
+                cboTingkatFilter.DisplayMember = GRADE_TABLE + ".tingkat";
+                cboTingkatFilter.ValueMember = GRADE_TABLE + ".tingkat";
 
                 cboMapel.DataSource = dsView;
                 cboMapel.DisplayMember = COURSE_TABLE + ".Nama";
@@ -111,17 +112,17 @@ namespace Ibuprofen
         {
             try
             {
+                cboKelasFilter.Items.Clear();
                 cboKelas.Items.Clear();
-                cboKls.Items.Clear();
                 lstSiswa.Items.Clear();
 
-                DataRowView v = (DataRowView)cboTingkat.SelectedItem;
+                DataRowView v = (DataRowView)cboTingkatFilter.SelectedItem;
                 int count = (int)v.Row.ItemArray[1];
 
                 for (int i = 0; i < count; i++)
                 {
+                    cboKelasFilter.Items.Add(alpha[i]);
                     cboKelas.Items.Add(alpha[i]);
-                    cboKls.Items.Add(alpha[i]);
                 }
             }
             catch (Exception ex)
@@ -135,8 +136,8 @@ namespace Ibuprofen
         {
             try
             {
-                string c = cboKelas.Text;
-                string grade = cboTingkat.Text;
+                string c = cboKelasFilter.Text;
+                string grade = cboTingkatFilter.Text;
 
                 object[] values = new object[2] { grade, c };
                 string ex = $"Tingkat = '{grade}' AND Kelas = '{c}'";
@@ -173,7 +174,7 @@ namespace Ibuprofen
         private void DisplayData()
         {
             try
-            {                
+            {
                 if (lstSiswa.SelectedItem == null)
                 {
                     return;
@@ -186,7 +187,7 @@ namespace Ibuprofen
                     txtNisn.Text = studentRow["NISN"].ToString();
                     txtNama.Text = studentRv["Nama"].ToString();
                     cboJk.Text = (bool)studentRow["Jenis_Kelamin"] ? "Laki-laki" : "Perempuan";
-                    cboKls.Text = studentRv["Kelas"].ToString();
+                    cboKelas.Text = studentRv["Kelas"].ToString();
                     DateTime ttl = (DateTime)studentRow["Tanggal_Lahir"];
                     txtTtl.Text = studentRow["Tempat_Lahir"].ToString() + ", " + ttl.ToString("dd MMMM yyyy");
                     txtNotelp.Text = studentRow["Nomor_Telepon"].ToString();
@@ -240,6 +241,67 @@ namespace Ibuprofen
             }
         }
 
+        #region Database Update
+        private void UpdateDataSet()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                UpdateStudent(connection);
+                UpdateStudentData(connection);
+                UpdateScores(connection);
+                connection.Close();
+            }
+        }
+
+        private void UpdateScores(SqlConnection connection)
+        {
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            DataRowView courseRv = (DataRowView)cboMapel.SelectedItem;
+
+            string courseId = courseRv["ID_Mapel"].ToString();
+            string studentId = studentRv["ID_Siswa"].ToString();
+
+            string q = $"UPDATE {SCORE_TABLE}" +
+                $" SET Ujian='{nudUjian.Value}', " +
+                $" Remedial='{nudRemedial.Value}', " +
+                $" Tugas='{nudTugas.Value}', " +
+                $" Tugas_Tambahan='{nudTugasP.Value}' " +
+                $" WHERE ID_Siswa='{studentId}' AND ID_Mapel='{courseId}'";
+            using (SqlCommand cmd = new SqlCommand(q, connection))
+            {
+                cmd.ExecuteNonQuery();
+            }
+
+        }
+
+        private void UpdateStudent(SqlConnection connection)
+        {
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            int studentId = int.Parse(studentRv["ID_Siswa"].ToString());
+            string q = $"UPDATE {STUDENT_TABLE}" +
+                $" SET Nama='{txtNama.Text}', Kelas='{cboKelas.Text}'" +
+                $" WHERE ID_Siswa='{studentId}'";
+            using (SqlCommand cmd = new SqlCommand(q, connection))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void UpdateStudentData(SqlConnection connection)
+        {
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            int studentId = int.Parse(studentRv["ID_Siswa"].ToString());
+            string q = $"UPDATE {STUDENT_DATA_TABLE}" +
+                $" SET Nomor_Telepon='{txtNotelp.Text}'" +
+                $" WHERE ID_Siswa='{studentId}'";
+            using (SqlCommand cmd = new SqlCommand(q, connection))
+            {
+                cmd.ExecuteNonQuery();
+            }
+        }
+        #endregion
+
         private void btnUbah_Click(object sender, EventArgs e)
         {
             try
@@ -248,12 +310,11 @@ namespace Ibuprofen
                 DataRow studentRow = dataSet.Tables[STUDENT_DATA_TABLE].Rows.Find(studentRv["ID_Siswa"]);
                 if (studentRow != null)
                 {
-                    Clear();
-                    LoadData();
-                    DisplayData();
+                    UpdateDataSet();
                     MessageBox.Show("Data telah berhasil diubah!");
 
-                    this.Close();
+                    Dispose();
+                    Close();
                     ModulSiswa modulSiswa = new ModulSiswa();
                     modulSiswa.ShowDialog();
                 }
@@ -274,7 +335,7 @@ namespace Ibuprofen
             txtNisn.Text = "";
             txtNama.Text = "";
             cboJk.Text = "";
-            cboKls.Text = "";
+            cboKelas.Text = "";
             txtTtl.Text = "";
             txtNotelp.Text = "";
 
