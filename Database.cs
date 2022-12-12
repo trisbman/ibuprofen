@@ -17,6 +17,7 @@ namespace Ibuprofen
             public static readonly string SCORE = "tbl_nilai";
             public static readonly string GRADE = "tbl_tingkat";
             public static readonly string COURSE = "tbl_mapel";
+            public static readonly string ATTENDANCE = "tbl_absensi";
         }
 
         public static class Relation

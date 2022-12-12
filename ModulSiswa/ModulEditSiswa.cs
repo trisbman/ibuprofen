@@ -9,12 +9,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ibuprofen.Data;
 using static Ibuprofen.Database;
 
 namespace Ibuprofen
 {
-    public partial class ModulSiswa : Form
+    public partial class ModulEditSiswa : Form
     {
         readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
         readonly DataSet dataSet = new DataSet();
@@ -25,7 +24,7 @@ namespace Ibuprofen
 
         bool UnsavedChanges = false;
 
-        public ModulSiswa()
+        public ModulEditSiswa()
         {
             InitializeComponent();
         }
@@ -195,7 +194,7 @@ namespace Ibuprofen
 
                     Dispose();
                     Close();
-                    ModulSiswa modulSiswa = new ModulSiswa();
+                    ModulEditSiswa modulSiswa = new ModulEditSiswa();
                     modulSiswa.ShowDialog();
                 }
                 else
@@ -362,6 +361,11 @@ namespace Ibuprofen
             Close();
             Login login = new Login();
             login.ShowDialog();
+        }
+
+        private void dtpAbsensi_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

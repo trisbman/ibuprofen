@@ -1,7 +1,7 @@
 ﻿
 namespace Ibuprofen
 {
-    partial class ModulSiswa
+    partial class ModulEditSiswa
     {
         /// <summary>
         /// Required designer variable.
@@ -62,7 +62,7 @@ namespace Ibuprofen
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpAbsensi = new System.Windows.Forms.DateTimePicker();
             this.tabReport = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -387,7 +387,7 @@ namespace Ibuprofen
             this.tabAttendance.Controls.Add(this.label16);
             this.tabAttendance.Controls.Add(this.label17);
             this.tabAttendance.Controls.Add(this.label15);
-            this.tabAttendance.Controls.Add(this.dateTimePicker1);
+            this.tabAttendance.Controls.Add(this.dtpAbsensi);
             this.tabAttendance.Location = new System.Drawing.Point(4, 29);
             this.tabAttendance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabAttendance.Name = "tabAttendance";
@@ -448,13 +448,14 @@ namespace Ibuprofen
             this.label15.TabIndex = 1;
             this.label15.Text = "Status";
             // 
-            // dateTimePicker1
+            // dtpAbsensi
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(171, 58);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(298, 26);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpAbsensi.Location = new System.Drawing.Point(171, 58);
+            this.dtpAbsensi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpAbsensi.Name = "dtpAbsensi";
+            this.dtpAbsensi.Size = new System.Drawing.Size(298, 26);
+            this.dtpAbsensi.TabIndex = 0;
+            this.dtpAbsensi.ValueChanged += new System.EventHandler(this.dtpAbsensi_ValueChanged);
             // 
             // tabReport
             // 
@@ -655,7 +656,7 @@ namespace Ibuprofen
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpAbsensi;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;

@@ -25,7 +25,7 @@ namespace Ibuprofen
         {
             Dispose();
             Close();
-            ModulSiswa modulSiswa = new ModulSiswa();
+            ModulEditSiswa modulSiswa = new ModulEditSiswa();
             modulSiswa.ShowDialog();
         }
 
@@ -33,7 +33,7 @@ namespace Ibuprofen
         {
             Dispose();
             Close();            
-            ModulStaff modulStaff = new ModulStaff();
+            ModulEditStaff modulStaff = new ModulEditStaff();
             modulStaff.ShowDialog();
         }
 
@@ -41,7 +41,7 @@ namespace Ibuprofen
         {
             Dispose();
             Close();
-            ModulKurikulum modulKurikulum = new ModulKurikulum();
+            ModulEditKurikulum modulKurikulum = new ModulEditKurikulum();
             modulKurikulum.ShowDialog();
         }
         private void button4_Click(object sender, EventArgs e)

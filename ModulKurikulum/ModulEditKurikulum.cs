@@ -13,7 +13,7 @@ using static Ibuprofen.Database;
 
 namespace Ibuprofen
 {
-    public partial class ModulKurikulum : Form
+    public partial class ModulEditKurikulum : Form
     {
 
         readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
@@ -21,7 +21,7 @@ namespace Ibuprofen
         DataViewManager dsView;
         SqlDataAdapter adapter;
 
-        public ModulKurikulum()
+        public ModulEditKurikulum()
         {
             InitializeComponent();
         }
@@ -100,7 +100,7 @@ namespace Ibuprofen
 
                 Dispose();
                 Close();
-                ModulSiswa modulSiswa = new ModulSiswa();
+                ModulEditSiswa modulSiswa = new ModulEditSiswa();
                 modulSiswa.ShowDialog();
             }
             catch (Exception ex)

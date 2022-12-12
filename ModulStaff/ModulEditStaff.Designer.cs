@@ -1,7 +1,7 @@
 ﻿
 namespace Ibuprofen
 {
-    partial class ModulStaff
+    partial class ModulEditStaff
     {
         /// <summary>
         /// Required designer variable.
