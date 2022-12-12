@@ -30,6 +30,8 @@ namespace Ibuprofen
 
         readonly char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
+        bool UnsavedChange = false;
+
         public ModulSiswa()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace Ibuprofen
 
         private void ModulSiswa_Load(object sender, EventArgs e)
         {
-            LoadData();
+            // LoadData();
         }
 
         private void LoadData()
@@ -168,7 +170,51 @@ namespace Ibuprofen
         }
         private void cboMapel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DisplayData();
+            // check if unsaved changes
+            if (UnsavedChange)
+            {
+                DialogResult dialogResult = MessageBox.Show("Perubahan Anda akan terhapus. Yakin ingin mengubah mata pelajaran?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    DisplayData();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+                DisplayData();
+            }
+        }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+                DataRow studentRow = dataSet.Tables[STUDENT_DATA_TABLE].Rows.Find(studentRv["ID_Siswa"]);
+                if (studentRow != null)
+                {
+                    UpdateDataSet();
+                    MessageBox.Show("Data telah berhasil diubah!");
+
+                    Dispose();
+                    Close();
+                    ModulSiswa modulSiswa = new ModulSiswa();
+                    modulSiswa.ShowDialog();
+                }
+                else
+                {
+                    throw new KeyNotFoundException();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void DisplayData()
@@ -302,32 +348,9 @@ namespace Ibuprofen
         }
         #endregion
 
-        private void btnUbah_Click(object sender, EventArgs e)
+        private void ToggleUnsavedChange(object sender, EventArgs e)
         {
-            try
-            {
-                DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
-                DataRow studentRow = dataSet.Tables[STUDENT_DATA_TABLE].Rows.Find(studentRv["ID_Siswa"]);
-                if (studentRow != null)
-                {
-                    UpdateDataSet();
-                    MessageBox.Show("Data telah berhasil diubah!");
-
-                    Dispose();
-                    Close();
-                    ModulSiswa modulSiswa = new ModulSiswa();
-                    modulSiswa.ShowDialog();
-                }
-                else
-                {
-                    throw new KeyNotFoundException();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.StackTrace);
-                Console.WriteLine(ex.Message);
-            }
+            UnsavedChange = !UnsavedChange;
         }
 
         private void Clear()
@@ -356,5 +379,6 @@ namespace Ibuprofen
             Login login = new Login();
             login.ShowDialog();
         }
+
     }
 }
