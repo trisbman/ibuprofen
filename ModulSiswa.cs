@@ -64,43 +64,43 @@ namespace Ibuprofen
                 #endregion
 
                 connection.Close();
-
-                dsView = dataSet.DefaultViewManager;
-
-                #region set primary keys
-                DataColumn[] gradeKey = new DataColumn[1];
-                gradeKey[0] = dataSet.Tables[Table.GRADE].Columns[0];
-                dataSet.Tables[Table.GRADE].PrimaryKey = gradeKey;
-
-                DataColumn[] studentKey = new DataColumn[1];
-                studentKey[0] = dataSet.Tables[Table.STUDENT].Columns["ID_Siswa"];
-                dataSet.Tables[Table.STUDENT].PrimaryKey = studentKey;
-
-                DataColumn[] dataKey = new DataColumn[1];
-                dataKey[0] = dataSet.Tables[Table.STUDENT_DATA].Columns["ID_Siswa"];
-                dataSet.Tables[Table.STUDENT_DATA].PrimaryKey = dataKey;
-
-                DataColumn[] scoreKey = new DataColumn[1];
-                scoreKey[0] = dataSet.Tables[Table.SCORE].Columns["ID_Nilai"];
-                dataSet.Tables[Table.SCORE].PrimaryKey = scoreKey;
-
-                DataColumn[] courseKey = new DataColumn[1];
-                courseKey[0] = dataSet.Tables[Table.COURSE].Columns["ID_Mapel"];
-                dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
-
-                dataSet.Relations.Clear();
-                dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0]);
-                dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0]);
-                #endregion
-
-                cboTingkatFilter.DataSource = dsView;
-                cboTingkatFilter.DisplayMember = Table.GRADE + ".tingkat";
-                cboTingkatFilter.ValueMember = Table.GRADE + ".tingkat";
-
-                cboMapel.DataSource = dsView;
-                cboMapel.DisplayMember = Table.COURSE + ".Nama";
-                cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
             }
+
+            dsView = dataSet.DefaultViewManager;
+
+            #region set primary keys
+            DataColumn[] gradeKey = new DataColumn[1];
+            gradeKey[0] = dataSet.Tables[Table.GRADE].Columns[0];
+            dataSet.Tables[Table.GRADE].PrimaryKey = gradeKey;
+
+            DataColumn[] studentKey = new DataColumn[1];
+            studentKey[0] = dataSet.Tables[Table.STUDENT].Columns["ID_Siswa"];
+            dataSet.Tables[Table.STUDENT].PrimaryKey = studentKey;
+
+            DataColumn[] dataKey = new DataColumn[1];
+            dataKey[0] = dataSet.Tables[Table.STUDENT_DATA].Columns["ID_Siswa"];
+            dataSet.Tables[Table.STUDENT_DATA].PrimaryKey = dataKey;
+
+            DataColumn[] scoreKey = new DataColumn[1];
+            scoreKey[0] = dataSet.Tables[Table.SCORE].Columns["ID_Nilai"];
+            dataSet.Tables[Table.SCORE].PrimaryKey = scoreKey;
+
+            DataColumn[] courseKey = new DataColumn[1];
+            courseKey[0] = dataSet.Tables[Table.COURSE].Columns["ID_Mapel"];
+            dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
+
+            dataSet.Relations.Clear();
+            dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0]);
+            dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0]);
+            #endregion
+
+            cboTingkatFilter.DataSource = dsView;
+            cboTingkatFilter.DisplayMember = Table.GRADE + ".tingkat";
+            cboTingkatFilter.ValueMember = Table.GRADE + ".tingkat";
+
+            cboMapel.DataSource = dsView;
+            cboMapel.DisplayMember = Table.COURSE + ".Nama";
+            cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
         }
 
         private void cboTingkat_SelectedIndexChanged(object sender, EventArgs e)
@@ -375,7 +375,7 @@ namespace Ibuprofen
             cboStatus.SelectedIndex = 0;
         }
 
-        private void exit(object sender, EventArgs e)
+        private void logout(object sender, EventArgs e)
         {
             Dispose();
             Close();
