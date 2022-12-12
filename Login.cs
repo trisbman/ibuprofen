@@ -82,5 +82,19 @@ namespace Ibuprofen
                 MessageBox.Show("User " + txtUsername.Text + " tidak terdaftar!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pboEye_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.PasswordChar == '\0')
+            {
+                txtPassword.PasswordChar = '*';
+                pboEye.BackgroundImage = Properties.Resources.hidden;
+            }
+            else
+            {
+                txtPassword.PasswordChar = '\0';
+                pboEye.BackgroundImage = Properties.Resources.view;
+            }
+        }
     }
 }
