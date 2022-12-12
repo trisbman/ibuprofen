@@ -23,28 +23,34 @@ namespace Ibuprofen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
+            this.Close();
             ModulSiswa modulSiswa = new ModulSiswa();
             modulSiswa.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Dispose();
+            this.Close();            
             ModulStaff modulStaff = new ModulStaff();
             modulStaff.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+
+            this.Dispose();
+            this.Close();
             ModulKurikulum modulKurikulum = new ModulKurikulum();
             modulKurikulum.ShowDialog();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+            Login login = new Login();
+            login.ShowDialog();
         }
     }
 }

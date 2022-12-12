@@ -31,6 +31,8 @@ namespace Ibuprofen
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabData = new System.Windows.Forms.TabPage();
+            this.cboKls = new System.Windows.Forms.ComboBox();
+            this.btnUbah = new System.Windows.Forms.Button();
             this.cboJk = new System.Windows.Forms.ComboBox();
             this.txtNotelp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -43,6 +45,7 @@ namespace Ibuprofen
             this.txtNisn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabScore = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.cboMapel = new System.Windows.Forms.ComboBox();
             this.nudRemedial = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
@@ -63,7 +66,6 @@ namespace Ibuprofen
             this.tabReport = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnUbah = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lstSiswa = new System.Windows.Forms.ListBox();
             this.cboTingkat = new System.Windows.Forms.ComboBox();
@@ -71,9 +73,7 @@ namespace Ibuprofen
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cboKls = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabData.SuspendLayout();
             this.tabScore.SuspendLayout();
@@ -120,6 +120,28 @@ namespace Ibuprofen
             this.tabData.TabIndex = 0;
             this.tabData.Text = "Ubah Data";
             this.tabData.UseVisualStyleBackColor = true;
+            // 
+            // cboKls
+            // 
+            this.cboKls.FormattingEnabled = true;
+            this.cboKls.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C"});
+            this.cboKls.Location = new System.Drawing.Point(154, 169);
+            this.cboKls.Name = "cboKls";
+            this.cboKls.Size = new System.Drawing.Size(282, 21);
+            this.cboKls.TabIndex = 16;
+            // 
+            // btnUbah
+            // 
+            this.btnUbah.Location = new System.Drawing.Point(361, 311);
+            this.btnUbah.Name = "btnUbah";
+            this.btnUbah.Size = new System.Drawing.Size(75, 23);
+            this.btnUbah.TabIndex = 5;
+            this.btnUbah.Text = "Ubah";
+            this.btnUbah.UseVisualStyleBackColor = true;
+            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
             // 
             // cboJk
             // 
@@ -233,6 +255,16 @@ namespace Ibuprofen
             this.tabScore.TabIndex = 1;
             this.tabScore.Text = "Pengaturan Nilai";
             this.tabScore.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(358, 297);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Ubah";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.btnUbah_Click);
             // 
             // cboMapel
             // 
@@ -414,16 +446,6 @@ namespace Ibuprofen
             this.button1.Text = "Generate Laporan Nilai";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnUbah
-            // 
-            this.btnUbah.Location = new System.Drawing.Point(361, 311);
-            this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(75, 23);
-            this.btnUbah.TabIndex = 5;
-            this.btnUbah.Text = "Ubah";
-            this.btnUbah.UseVisualStyleBackColor = true;
-            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lstSiswa);
@@ -459,7 +481,7 @@ namespace Ibuprofen
             this.cboTingkat.Name = "cboTingkat";
             this.cboTingkat.Size = new System.Drawing.Size(217, 21);
             this.cboTingkat.TabIndex = 0;
-            this.cboTingkat.SelectedIndexChanged += new System.EventHandler(this.FilterChanged);
+            this.cboTingkat.SelectedIndexChanged += new System.EventHandler(this.cboTingkat_SelectedIndexChanged);
             // 
             // cboKelas
             // 
@@ -472,7 +494,7 @@ namespace Ibuprofen
             this.cboKelas.Name = "cboKelas";
             this.cboKelas.Size = new System.Drawing.Size(217, 21);
             this.cboKelas.TabIndex = 0;
-            this.cboKelas.SelectedIndexChanged += new System.EventHandler(this.FilterChanged);
+            this.cboKelas.SelectedIndexChanged += new System.EventHandler(this.cboKelas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -501,18 +523,6 @@ namespace Ibuprofen
             this.label2.TabIndex = 2;
             this.label2.Text = "Tingkat";
             // 
-            // cboKls
-            // 
-            this.cboKls.FormattingEnabled = true;
-            this.cboKls.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
-            this.cboKls.Location = new System.Drawing.Point(154, 169);
-            this.cboKls.Name = "cboKls";
-            this.cboKls.Size = new System.Drawing.Size(282, 21);
-            this.cboKls.TabIndex = 16;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(709, 25);
@@ -522,15 +532,6 @@ namespace Ibuprofen
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.exit);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(358, 297);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Ubah";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // ModulSiswa
             // 
@@ -542,6 +543,7 @@ namespace Ibuprofen
             this.Controls.Add(this.tabControl1);
             this.Name = "ModulSiswa";
             this.Text = "Pengelolaan Peserta Didik";
+            this.Load += new System.EventHandler(this.ModulSiswa_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabData.ResumeLayout(false);
             this.tabData.PerformLayout();

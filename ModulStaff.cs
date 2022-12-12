@@ -21,7 +21,10 @@ namespace Ibuprofen
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Dispose();
+            Close();
+            Login login = new Login();
+            login.ShowDialog();
         }
     }
 }
