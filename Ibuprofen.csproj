@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database.cs" />
     <Compile Include="Data\DataMapel.cs" />
     <Compile Include="Data\DataSiswa.cs" />
     <Compile Include="Login.cs">

@@ -10,20 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ibuprofen.Data;
+using static Ibuprofen.Database;
 
 namespace Ibuprofen
 {
     public partial class ModulSiswa : Form
     {
-        private readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
-        private readonly string STUDENT_TABLE = "tbl_siswa";
-        private readonly string STUDENT_DATA_TABLE = "tbl_data_siswa";
-        private readonly string SCORE_TABLE = "tbl_nilai";
-        private readonly string STUDENT_DATA_RELATION = "hub_siswa_data";
-        private readonly string STUDENT_SCORE_RELATION = "hub_siswa_nilai";
-        private readonly string GRADE_TABLE = "tbl_tingkat";
-        private readonly string COURSE_TABLE = "tbl_mapel";
-
+        readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
         readonly DataSet dataSet = new DataSet();
         DataViewManager dsView;
         SqlDataAdapter adapter;
@@ -39,7 +32,7 @@ namespace Ibuprofen
 
         private void ModulSiswa_Load(object sender, EventArgs e)
         {
-            // LoadData();
+            LoadData();
         }
 
         private void LoadData()
@@ -49,25 +42,25 @@ namespace Ibuprofen
                 connection.Open();
 
                 #region load data from db
-                SqlCommand command = new SqlCommand("SELECT * FROM " + GRADE_TABLE, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.GRADE, connection);
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, GRADE_TABLE);
+                adapter.Fill(dataSet, Table.GRADE);
 
-                command = new SqlCommand("SELECT * FROM " + STUDENT_TABLE, connection);
+                command = new SqlCommand("SELECT * FROM " + Table.STUDENT, connection);
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, STUDENT_TABLE);
+                adapter.Fill(dataSet, Table.STUDENT);
 
-                command = new SqlCommand("SELECT * FROM " + STUDENT_DATA_TABLE, connection);
+                command = new SqlCommand("SELECT * FROM " + Table.STUDENT_DATA, connection);
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, STUDENT_DATA_TABLE);
+                adapter.Fill(dataSet, Table.STUDENT_DATA);
 
-                command = new SqlCommand("SELECT * FROM " + SCORE_TABLE, connection);
+                command = new SqlCommand("SELECT * FROM " + Table.SCORE, connection);
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, SCORE_TABLE);
+                adapter.Fill(dataSet, Table.SCORE);
 
-                command = new SqlCommand("SELECT * FROM " + COURSE_TABLE, connection);
+                command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, COURSE_TABLE);
+                adapter.Fill(dataSet, Table.COURSE);
                 #endregion
 
                 connection.Close();
@@ -76,37 +69,37 @@ namespace Ibuprofen
 
                 #region set primary keys
                 DataColumn[] gradeKey = new DataColumn[1];
-                gradeKey[0] = dataSet.Tables[GRADE_TABLE].Columns[0];
-                dataSet.Tables[GRADE_TABLE].PrimaryKey = gradeKey;
+                gradeKey[0] = dataSet.Tables[Table.GRADE].Columns[0];
+                dataSet.Tables[Table.GRADE].PrimaryKey = gradeKey;
 
                 DataColumn[] studentKey = new DataColumn[1];
-                studentKey[0] = dataSet.Tables[STUDENT_TABLE].Columns["ID_Siswa"];
-                dataSet.Tables[STUDENT_TABLE].PrimaryKey = studentKey;
+                studentKey[0] = dataSet.Tables[Table.STUDENT].Columns["ID_Siswa"];
+                dataSet.Tables[Table.STUDENT].PrimaryKey = studentKey;
 
                 DataColumn[] dataKey = new DataColumn[1];
-                dataKey[0] = dataSet.Tables[STUDENT_DATA_TABLE].Columns["ID_Siswa"];
-                dataSet.Tables[STUDENT_DATA_TABLE].PrimaryKey = dataKey;
+                dataKey[0] = dataSet.Tables[Table.STUDENT_DATA].Columns["ID_Siswa"];
+                dataSet.Tables[Table.STUDENT_DATA].PrimaryKey = dataKey;
 
                 DataColumn[] scoreKey = new DataColumn[1];
-                scoreKey[0] = dataSet.Tables[SCORE_TABLE].Columns["ID_Nilai"];
-                dataSet.Tables[SCORE_TABLE].PrimaryKey = scoreKey;
+                scoreKey[0] = dataSet.Tables[Table.SCORE].Columns["ID_Nilai"];
+                dataSet.Tables[Table.SCORE].PrimaryKey = scoreKey;
 
                 DataColumn[] courseKey = new DataColumn[1];
-                courseKey[0] = dataSet.Tables[COURSE_TABLE].Columns["ID_Mapel"];
-                dataSet.Tables[COURSE_TABLE].PrimaryKey = courseKey;
+                courseKey[0] = dataSet.Tables[Table.COURSE].Columns["ID_Mapel"];
+                dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
 
                 dataSet.Relations.Clear();
-                dataSet.Relations.Add(STUDENT_DATA_RELATION, studentKey[0], dataKey[0]);
-                dataSet.Relations.Add(STUDENT_SCORE_RELATION, studentKey[0], scoreKey[0]);
+                dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0]);
+                dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0]);
                 #endregion
 
                 cboTingkatFilter.DataSource = dsView;
-                cboTingkatFilter.DisplayMember = GRADE_TABLE + ".tingkat";
-                cboTingkatFilter.ValueMember = GRADE_TABLE + ".tingkat";
+                cboTingkatFilter.DisplayMember = Table.GRADE + ".tingkat";
+                cboTingkatFilter.ValueMember = Table.GRADE + ".tingkat";
 
                 cboMapel.DataSource = dsView;
-                cboMapel.DisplayMember = COURSE_TABLE + ".Nama";
-                cboMapel.ValueMember = COURSE_TABLE + ".ID_Mapel";
+                cboMapel.DisplayMember = Table.COURSE + ".Nama";
+                cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
             }
         }
 
@@ -144,8 +137,8 @@ namespace Ibuprofen
                 object[] values = new object[2] { grade, c };
                 string ex = $"Tingkat = '{grade}' AND Kelas = '{c}'";
 
-                DataRow[] rows = dataSet.Tables[STUDENT_TABLE].Select(ex);
-                DataTable dataTable = dataSet.Tables[STUDENT_TABLE].Clone();
+                DataRow[] rows = dataSet.Tables[Table.STUDENT].Select(ex);
+                DataTable dataTable = dataSet.Tables[Table.STUDENT].Clone();
 
                 foreach (DataRow row in rows)
                 {
@@ -194,7 +187,7 @@ namespace Ibuprofen
             try
             {
                 DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
-                DataRow studentRow = dataSet.Tables[STUDENT_DATA_TABLE].Rows.Find(studentRv["ID_Siswa"]);
+                DataRow studentRow = dataSet.Tables[Table.STUDENT_DATA].Rows.Find(studentRv["ID_Siswa"]);
                 if (studentRow != null)
                 {
                     UpdateDataSet();
@@ -226,7 +219,7 @@ namespace Ibuprofen
                     return;
                 }
                 DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
-                DataRow studentRow = dataSet.Tables[STUDENT_DATA_TABLE].Rows.Find(studentRv["ID_Siswa"]);
+                DataRow studentRow = dataSet.Tables[Table.STUDENT_DATA].Rows.Find(studentRv["ID_Siswa"]);
                 if (studentRow != null)
                 {
                     #region Tab 1
@@ -266,7 +259,7 @@ namespace Ibuprofen
 
                 object[] values = new object[2] { courseId, studentId };
                 string ex = $"ID_Mapel = '{courseId}' AND ID_Siswa = '{studentId}'";
-                DataRow courseRow = dataSet.Tables[SCORE_TABLE].Select(ex)[0];
+                DataRow courseRow = dataSet.Tables[Table.SCORE].Select(ex)[0];
 
                 if (courseRow != null)
                 {
@@ -308,7 +301,7 @@ namespace Ibuprofen
             string courseId = courseRv["ID_Mapel"].ToString();
             string studentId = studentRv["ID_Siswa"].ToString();
 
-            string q = $"UPDATE {SCORE_TABLE}" +
+            string q = $"UPDATE {Table.SCORE}" +
                 $" SET Ujian='{nudUjian.Value}', " +
                 $" Remedial='{nudRemedial.Value}', " +
                 $" Tugas='{nudTugas.Value}', " +
@@ -319,7 +312,7 @@ namespace Ibuprofen
                 int result = cmd.ExecuteNonQuery();
                 if(result == 0)
                 {
-                    q = $"INSERT INTO {SCORE_TABLE}" +
+                    q = $"INSERT INTO {Table.SCORE}" +
                         $" ID_Siswa, ID_Mapel, Ujian, Remedial, Tugas, Tugas_Tambahan " +
                         $" VALUES ('{studentId}', '{courseId}', " +
                         $" '{nudUjian.Value}', '{nudRemedial.Value}', " +
@@ -335,7 +328,7 @@ namespace Ibuprofen
         {
             DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
             int studentId = int.Parse(studentRv["ID_Siswa"].ToString());
-            string q = $"UPDATE {STUDENT_TABLE}" +
+            string q = $"UPDATE {Table.STUDENT}" +
                 $" SET Nama='{txtNama.Text}', Kelas='{cboKelas.Text}'" +
                 $" WHERE ID_Siswa='{studentId}'";
             using (SqlCommand cmd = new SqlCommand(q, connection))
@@ -348,7 +341,7 @@ namespace Ibuprofen
         {
             DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
             int studentId = int.Parse(studentRv["ID_Siswa"].ToString());
-            string q = $"UPDATE {STUDENT_DATA_TABLE}" +
+            string q = $"UPDATE {Table.STUDENT_DATA}" +
                 $" SET Nomor_Telepon='{txtNotelp.Text}'" +
                 $" WHERE ID_Siswa='{studentId}'";
             using (SqlCommand cmd = new SqlCommand(q, connection))
