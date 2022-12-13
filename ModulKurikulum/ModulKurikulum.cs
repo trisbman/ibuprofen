@@ -16,5 +16,12 @@ namespace Ibuprofen.ModulKurikulum
         {
             InitializeComponent();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Dispose(); Close();
+            ModulEditKurikulum modulEditKurikulum = new ModulEditKurikulum();
+            modulEditKurikulum.ShowDialog();
+        }
     }
 }

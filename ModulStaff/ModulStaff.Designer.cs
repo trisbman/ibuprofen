@@ -31,8 +31,8 @@ namespace Ibuprofen.ModulStaff
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -53,27 +53,28 @@ namespace Ibuprofen.ModulStaff
             this.label3.Text = "Tambah Data Staff";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnEdit
             // 
-            this.button1.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(311, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 10;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEdit.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEdit.Location = new System.Drawing.Point(311, 58);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(150, 150);
+            this.btnEdit.TabIndex = 10;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(72, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 150);
-            this.button3.TabIndex = 8;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdd.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.Location = new System.Drawing.Point(72, 58);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(150, 150);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // ModulStaff
             // 
@@ -81,9 +82,9 @@ namespace Ibuprofen.ModulStaff
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 291);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnAdd);
             this.Name = "ModulStaff";
             this.Text = "Menu Staff";
             this.ResumeLayout(false);
@@ -93,8 +94,8 @@ namespace Ibuprofen.ModulStaff
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

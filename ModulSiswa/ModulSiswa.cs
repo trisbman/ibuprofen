@@ -23,8 +23,7 @@ namespace Ibuprofen.ModulSiswa
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Dispose(); Close();
             ModulEditSiswa modulEditSiswa = new ModulEditSiswa();
             modulEditSiswa.ShowDialog();
         }
