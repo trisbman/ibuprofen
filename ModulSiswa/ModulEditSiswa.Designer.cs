@@ -92,11 +92,10 @@ namespace Ibuprofen
             this.tabControl1.Controls.Add(this.tabScore);
             this.tabControl1.Controls.Add(this.tabAttendance);
             this.tabControl1.Controls.Add(this.tabReport);
-            this.tabControl1.Location = new System.Drawing.Point(456, 83);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Location = new System.Drawing.Point(304, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(726, 591);
+            this.tabControl1.Size = new System.Drawing.Size(484, 384);
             this.tabControl1.TabIndex = 0;
             // 
             // tabData
@@ -114,11 +113,10 @@ namespace Ibuprofen
             this.tabData.Controls.Add(this.label5);
             this.tabData.Controls.Add(this.txtNisn);
             this.tabData.Controls.Add(this.label4);
-            this.tabData.Location = new System.Drawing.Point(4, 29);
-            this.tabData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabData.Location = new System.Drawing.Point(4, 22);
             this.tabData.Name = "tabData";
-            this.tabData.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabData.Size = new System.Drawing.Size(718, 558);
+            this.tabData.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabData.Size = new System.Drawing.Size(476, 358);
             this.tabData.TabIndex = 0;
             this.tabData.Text = "Ubah Data";
             this.tabData.UseVisualStyleBackColor = true;
@@ -130,18 +128,16 @@ namespace Ibuprofen
             "A",
             "B",
             "C"});
-            this.cboKelas.Location = new System.Drawing.Point(231, 260);
-            this.cboKelas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboKelas.Location = new System.Drawing.Point(154, 169);
             this.cboKelas.Name = "cboKelas";
-            this.cboKelas.Size = new System.Drawing.Size(421, 28);
+            this.cboKelas.Size = new System.Drawing.Size(282, 21);
             this.cboKelas.TabIndex = 16;
             // 
             // btnUbah
             // 
-            this.btnUbah.Location = new System.Drawing.Point(542, 478);
-            this.btnUbah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUbah.Location = new System.Drawing.Point(361, 311);
             this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(112, 35);
+            this.btnUbah.Size = new System.Drawing.Size(75, 23);
             this.btnUbah.TabIndex = 5;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = true;
@@ -151,103 +147,92 @@ namespace Ibuprofen
             // 
             this.cboJk.Enabled = false;
             this.cboJk.FormattingEnabled = true;
-            this.cboJk.Location = new System.Drawing.Point(231, 197);
-            this.cboJk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboJk.Location = new System.Drawing.Point(154, 128);
             this.cboJk.Name = "cboJk";
-            this.cboJk.Size = new System.Drawing.Size(421, 28);
+            this.cboJk.Size = new System.Drawing.Size(282, 21);
             this.cboJk.TabIndex = 16;
             // 
             // txtNotelp
             // 
-            this.txtNotelp.Location = new System.Drawing.Point(231, 398);
-            this.txtNotelp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNotelp.Location = new System.Drawing.Point(154, 259);
             this.txtNotelp.Name = "txtNotelp";
-            this.txtNotelp.Size = new System.Drawing.Size(421, 26);
+            this.txtNotelp.Size = new System.Drawing.Size(282, 20);
             this.txtNotelp.TabIndex = 11;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(63, 403);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(42, 262);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 20);
+            this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 5;
             this.label9.Text = "No Telepon";
             // 
             // txtTtl
             // 
             this.txtTtl.Enabled = false;
-            this.txtTtl.Location = new System.Drawing.Point(231, 325);
-            this.txtTtl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTtl.Location = new System.Drawing.Point(154, 211);
             this.txtTtl.Name = "txtTtl";
-            this.txtTtl.Size = new System.Drawing.Size(421, 26);
+            this.txtTtl.Size = new System.Drawing.Size(282, 20);
             this.txtTtl.TabIndex = 12;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 329);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(42, 214);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 20);
+            this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 6;
             this.label8.Text = "Tempat, Tgl Lahir";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 265);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(42, 172);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 7;
             this.label7.Text = "Kelas";
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(231, 131);
-            this.txtNama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNama.Location = new System.Drawing.Point(154, 85);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(421, 26);
+            this.txtNama.Size = new System.Drawing.Size(282, 20);
             this.txtNama.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 202);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(42, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Jenis Kelamin";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 135);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(42, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Nama";
             // 
             // txtNisn
             // 
             this.txtNisn.Enabled = false;
-            this.txtNisn.Location = new System.Drawing.Point(231, 62);
-            this.txtNisn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNisn.Location = new System.Drawing.Point(154, 40);
             this.txtNisn.Name = "txtNisn";
-            this.txtNisn.Size = new System.Drawing.Size(421, 26);
+            this.txtNisn.Size = new System.Drawing.Size(282, 20);
             this.txtNisn.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 66);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(42, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.Size = new System.Drawing.Size(33, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "NISN";
             // 
@@ -264,21 +249,19 @@ namespace Ibuprofen
             this.tabScore.Controls.Add(this.label11);
             this.tabScore.Controls.Add(this.nudTugas);
             this.tabScore.Controls.Add(this.label10);
-            this.tabScore.Location = new System.Drawing.Point(4, 29);
-            this.tabScore.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabScore.Location = new System.Drawing.Point(4, 22);
             this.tabScore.Name = "tabScore";
-            this.tabScore.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabScore.Size = new System.Drawing.Size(718, 558);
+            this.tabScore.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabScore.Size = new System.Drawing.Size(476, 358);
             this.tabScore.TabIndex = 1;
             this.tabScore.Text = "Pengaturan Nilai";
             this.tabScore.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(537, 457);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(358, 297);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 35);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 6;
             this.button4.Text = "Ubah";
             this.button4.UseVisualStyleBackColor = true;
@@ -287,96 +270,87 @@ namespace Ibuprofen
             // cboMapel
             // 
             this.cboMapel.FormattingEnabled = true;
-            this.cboMapel.Location = new System.Drawing.Point(326, 74);
-            this.cboMapel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboMapel.Location = new System.Drawing.Point(217, 48);
             this.cboMapel.Name = "cboMapel";
-            this.cboMapel.Size = new System.Drawing.Size(322, 28);
+            this.cboMapel.Size = new System.Drawing.Size(216, 21);
             this.cboMapel.TabIndex = 2;
             this.cboMapel.SelectedIndexChanged += new System.EventHandler(this.cboMapel_SelectedIndexChanged);
+            this.cboMapel.SelectionChangeCommitted += new System.EventHandler(this.cboMapel_SelectionChangedCommited);
             // 
             // nudRemedial
             // 
-            this.nudRemedial.Location = new System.Drawing.Point(326, 366);
-            this.nudRemedial.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudRemedial.Location = new System.Drawing.Point(217, 238);
             this.nudRemedial.Name = "nudRemedial";
-            this.nudRemedial.Size = new System.Drawing.Size(324, 26);
+            this.nudRemedial.Size = new System.Drawing.Size(216, 20);
             this.nudRemedial.TabIndex = 1;
-            this.nudRemedial.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
+            this.nudRemedial.ValueChanged += new System.EventHandler(this.nudScore_ValueChanged);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(92, 369);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(61, 240);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 20);
+            this.label13.Size = new System.Drawing.Size(51, 13);
             this.label13.TabIndex = 0;
             this.label13.Text = "Remedial";
             // 
             // nudUjian
             // 
-            this.nudUjian.Location = new System.Drawing.Point(326, 294);
-            this.nudUjian.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudUjian.Location = new System.Drawing.Point(217, 191);
             this.nudUjian.Name = "nudUjian";
-            this.nudUjian.Size = new System.Drawing.Size(324, 26);
+            this.nudUjian.Size = new System.Drawing.Size(216, 20);
             this.nudUjian.TabIndex = 1;
-            this.nudUjian.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
+            this.nudUjian.ValueChanged += new System.EventHandler(this.nudScore_ValueChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(92, 297);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(61, 193);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 20);
+            this.label12.Size = new System.Drawing.Size(31, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Ujian";
             // 
             // nudTugasP
             // 
-            this.nudTugasP.Location = new System.Drawing.Point(326, 220);
-            this.nudTugasP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudTugasP.Location = new System.Drawing.Point(217, 143);
             this.nudTugasP.Name = "nudTugasP";
-            this.nudTugasP.Size = new System.Drawing.Size(324, 26);
+            this.nudTugasP.Size = new System.Drawing.Size(216, 20);
             this.nudTugasP.TabIndex = 1;
-            this.nudTugasP.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
+            this.nudTugasP.ValueChanged += new System.EventHandler(this.nudScore_ValueChanged);
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(92, 223);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(61, 145);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(133, 20);
+            this.label14.Size = new System.Drawing.Size(91, 13);
             this.label14.TabIndex = 0;
             this.label14.Text = "Tugas Tambahan";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(92, 155);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(61, 101);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 20);
+            this.label11.Size = new System.Drawing.Size(37, 13);
             this.label11.TabIndex = 0;
             this.label11.Text = "Tugas";
             // 
             // nudTugas
             // 
-            this.nudTugas.Location = new System.Drawing.Point(326, 152);
-            this.nudTugas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nudTugas.Location = new System.Drawing.Point(217, 99);
             this.nudTugas.Name = "nudTugas";
-            this.nudTugas.Size = new System.Drawing.Size(324, 26);
+            this.nudTugas.Size = new System.Drawing.Size(216, 20);
             this.nudTugas.TabIndex = 1;
-            this.nudTugas.ValueChanged += new System.EventHandler(this.ToggleUnsavedChanges);
+            this.nudTugas.ValueChanged += new System.EventHandler(this.nudScore_ValueChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(92, 78);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(61, 51);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 20);
+            this.label10.Size = new System.Drawing.Size(78, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "Mata Pelajaran";
             // 
@@ -388,21 +362,19 @@ namespace Ibuprofen
             this.tabAttendance.Controls.Add(this.label17);
             this.tabAttendance.Controls.Add(this.label15);
             this.tabAttendance.Controls.Add(this.dtpAbsensi);
-            this.tabAttendance.Location = new System.Drawing.Point(4, 29);
-            this.tabAttendance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabAttendance.Location = new System.Drawing.Point(4, 22);
             this.tabAttendance.Name = "tabAttendance";
-            this.tabAttendance.Size = new System.Drawing.Size(718, 558);
+            this.tabAttendance.Size = new System.Drawing.Size(476, 358);
             this.tabAttendance.TabIndex = 2;
             this.tabAttendance.Text = "Pengaturan Absensi";
             this.tabAttendance.UseVisualStyleBackColor = true;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(171, 205);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox2.Location = new System.Drawing.Point(114, 133);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(510, 307);
+            this.textBox2.Size = new System.Drawing.Size(341, 201);
             this.textBox2.TabIndex = 3;
             // 
             // cboStatus
@@ -412,48 +384,43 @@ namespace Ibuprofen
             "Hadir",
             "Alpha",
             "Izin"});
-            this.cboStatus.Location = new System.Drawing.Point(171, 131);
-            this.cboStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboStatus.Location = new System.Drawing.Point(114, 85);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(298, 28);
+            this.cboStatus.Size = new System.Drawing.Size(200, 21);
             this.cboStatus.TabIndex = 2;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(48, 217);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(32, 141);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(92, 20);
+            this.label16.Size = new System.Drawing.Size(62, 13);
             this.label16.TabIndex = 1;
             this.label16.Text = "Keterangan";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(48, 68);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(32, 44);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(66, 20);
+            this.label17.Size = new System.Drawing.Size(46, 13);
             this.label17.TabIndex = 1;
             this.label17.Text = "Tanggal";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(48, 135);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(32, 88);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(56, 20);
+            this.label15.Size = new System.Drawing.Size(37, 13);
             this.label15.TabIndex = 1;
             this.label15.Text = "Status";
             // 
             // dtpAbsensi
             // 
-            this.dtpAbsensi.Location = new System.Drawing.Point(171, 58);
-            this.dtpAbsensi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtpAbsensi.Location = new System.Drawing.Point(114, 38);
             this.dtpAbsensi.Name = "dtpAbsensi";
-            this.dtpAbsensi.Size = new System.Drawing.Size(298, 26);
+            this.dtpAbsensi.Size = new System.Drawing.Size(200, 20);
             this.dtpAbsensi.TabIndex = 0;
             this.dtpAbsensi.ValueChanged += new System.EventHandler(this.dtpAbsensi_ValueChanged);
             // 
@@ -461,30 +428,27 @@ namespace Ibuprofen
             // 
             this.tabReport.Controls.Add(this.button2);
             this.tabReport.Controls.Add(this.button1);
-            this.tabReport.Location = new System.Drawing.Point(4, 29);
-            this.tabReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabReport.Location = new System.Drawing.Point(4, 22);
             this.tabReport.Name = "tabReport";
-            this.tabReport.Size = new System.Drawing.Size(718, 558);
+            this.tabReport.Size = new System.Drawing.Size(476, 358);
             this.tabReport.TabIndex = 3;
             this.tabReport.Text = "Laporan";
             this.tabReport.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(164, 242);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(109, 157);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(382, 35);
+            this.button2.Size = new System.Drawing.Size(255, 23);
             this.button2.TabIndex = 0;
             this.button2.Text = "Generate Laporan Absensi";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(164, 146);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(109, 95);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(382, 35);
+            this.button1.Size = new System.Drawing.Size(255, 23);
             this.button1.TabIndex = 0;
             this.button1.Text = "Generate Laporan Nilai";
             this.button1.UseVisualStyleBackColor = true;
@@ -497,11 +461,9 @@ namespace Ibuprofen
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(18, 83);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 54);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(416, 591);
+            this.groupBox2.Size = new System.Drawing.Size(277, 384);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pilih Siswa";
@@ -509,11 +471,9 @@ namespace Ibuprofen
             // lstSiswa
             // 
             this.lstSiswa.FormattingEnabled = true;
-            this.lstSiswa.ItemHeight = 20;
-            this.lstSiswa.Location = new System.Drawing.Point(38, 275);
-            this.lstSiswa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstSiswa.Location = new System.Drawing.Point(25, 179);
             this.lstSiswa.Name = "lstSiswa";
-            this.lstSiswa.Size = new System.Drawing.Size(324, 284);
+            this.lstSiswa.Size = new System.Drawing.Size(217, 186);
             this.lstSiswa.TabIndex = 3;
             this.lstSiswa.SelectedIndexChanged += new System.EventHandler(this.lstSiswa_SelectedIndexChanged);
             // 
@@ -524,10 +484,9 @@ namespace Ibuprofen
             "10",
             "11",
             "12"});
-            this.cboTingkatFilter.Location = new System.Drawing.Point(38, 91);
-            this.cboTingkatFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboTingkatFilter.Location = new System.Drawing.Point(25, 59);
             this.cboTingkatFilter.Name = "cboTingkatFilter";
-            this.cboTingkatFilter.Size = new System.Drawing.Size(324, 28);
+            this.cboTingkatFilter.Size = new System.Drawing.Size(217, 21);
             this.cboTingkatFilter.TabIndex = 0;
             this.cboTingkatFilter.SelectedIndexChanged += new System.EventHandler(this.cboTingkat_SelectedIndexChanged);
             // 
@@ -538,64 +497,58 @@ namespace Ibuprofen
             "A",
             "B",
             "C"});
-            this.cboKelasFilter.Location = new System.Drawing.Point(38, 180);
-            this.cboKelasFilter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboKelasFilter.Location = new System.Drawing.Point(25, 117);
             this.cboKelasFilter.Name = "cboKelasFilter";
-            this.cboKelasFilter.Size = new System.Drawing.Size(324, 28);
+            this.cboKelasFilter.Size = new System.Drawing.Size(217, 21);
             this.cboKelasFilter.TabIndex = 0;
             this.cboKelasFilter.SelectedIndexChanged += new System.EventHandler(this.cboKelas_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 251);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(25, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Siswa";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 151);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(25, 98);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Kelas";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 62);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(25, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 20);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tingkat";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1064, 38);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button3.Location = new System.Drawing.Point(709, 25);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(112, 35);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Logout);
             // 
-            // ModulSiswa
+            // ModulEditSiswa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ModulSiswa";
+            this.Name = "ModulEditSiswa";
             this.Text = "Pengelolaan Peserta Didik";
             this.Load += new System.EventHandler(this.ModulSiswa_Load);
             this.tabControl1.ResumeLayout(false);

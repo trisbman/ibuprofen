@@ -89,8 +89,8 @@ namespace Ibuprofen
             dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
 
             dataSet.Relations.Clear();
-            dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0]);
-            dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0]);
+            dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0], false);
+            dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0], false);
             #endregion
 
             cboTingkatFilter.DataSource = dsView;
@@ -160,7 +160,14 @@ namespace Ibuprofen
         {
             DisplayData();
         }
+
         private void cboMapel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplaySecondTabData();
+            ToggleUnsavedChanges(false);
+        }
+
+        private void cboMapel_SelectionChangedCommited(object sender, EventArgs e)
         {
             // check if unsaved changes
             if (UnsavedChanges)
@@ -168,7 +175,7 @@ namespace Ibuprofen
                 DialogResult dialogResult = MessageBox.Show("Perubahan Anda akan terhapus. Yakin ingin mengubah mata pelajaran?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    DisplayData();
+                    DisplaySecondTabData();
                 }
                 else
                 {
@@ -177,7 +184,7 @@ namespace Ibuprofen
             }
             else
             {
-                DisplayData();
+                DisplaySecondTabData();
             }
         }
 
@@ -245,7 +252,11 @@ namespace Ibuprofen
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             }
+            Console.WriteLine(UnsavedChanges);
+            ToggleUnsavedChanges(false);
+            Console.WriteLine(UnsavedChanges);
         }
+
         private void DisplaySecondTabData()
         {
             try
@@ -258,10 +269,10 @@ namespace Ibuprofen
 
                 object[] values = new object[2] { courseId, studentId };
                 string ex = $"ID_Mapel = '{courseId}' AND ID_Siswa = '{studentId}'";
-                DataRow courseRow = dataSet.Tables[Table.SCORE].Select(ex)[0];
-
-                if (courseRow != null)
+                DataRow[] courseRows = dataSet.Tables[Table.SCORE].Select(ex);
+                if (courseRows.Length > 0)
                 {
+                    DataRow courseRow = courseRows[0];
                     nudTugas.Value = (int)courseRow["Tugas"];
                     nudTugasP.Value = (int)courseRow["Tugas_Tambahan"];
                     nudUjian.Value = (int)courseRow["Ujian"];
@@ -269,7 +280,7 @@ namespace Ibuprofen
                 }
                 else
                 {
-                    throw new KeyNotFoundException();
+                    ClearAllScore();
                 }
             }
             catch (Exception ex)
@@ -277,6 +288,14 @@ namespace Ibuprofen
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void ClearAllScore()
+        {
+            nudTugas.Value = 0;
+            nudTugasP.Value = 0;
+            nudUjian.Value = 0;
+            nudRemedial.Value = 0;
         }
 
         #region Database Update
@@ -309,10 +328,10 @@ namespace Ibuprofen
             using (SqlCommand cmd = new SqlCommand(q, connection))
             {
                 int result = cmd.ExecuteNonQuery();
-                if(result == 0)
+                if (result == 0)
                 {
                     q = $"INSERT INTO {Table.SCORE}" +
-                        $" ID_Siswa, ID_Mapel, Ujian, Remedial, Tugas, Tugas_Tambahan " +
+                        $" (ID_Siswa, ID_Mapel, Ujian, Remedial, Tugas, Tugas_Tambahan) " +
                         $" VALUES ('{studentId}', '{courseId}', " +
                         $" '{nudUjian.Value}', '{nudRemedial.Value}', " +
                         $" '{nudTugas.Value}', '{nudTugasP.Value}') ";
@@ -350,9 +369,21 @@ namespace Ibuprofen
         }
         #endregion
 
-        private void ToggleUnsavedChanges(object sender, EventArgs e)
+        private void nudScore_ValueChanged(object sender, EventArgs e)
         {
-            UnsavedChanges = !UnsavedChanges;
+            ToggleUnsavedChanges(true);
+        }
+
+        private void ToggleUnsavedChanges(bool? value)
+        {
+            if (value.HasValue)
+            {
+                UnsavedChanges = (bool)value;
+            }
+            else
+            {
+                UnsavedChanges = !UnsavedChanges;
+            }
         }
 
         private void Logout(object sender, EventArgs e)
