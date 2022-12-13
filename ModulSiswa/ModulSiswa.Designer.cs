@@ -1,5 +1,5 @@
 ﻿
-namespace Ibuprofen.ModulKurikulum
+namespace Ibuprofen.ModulSiswa
 {
     partial class ModulSiswa
     {
@@ -31,8 +31,8 @@ namespace Ibuprofen.ModulKurikulum
         {
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label3
@@ -53,27 +53,29 @@ namespace Ibuprofen.ModulKurikulum
             this.label1.Text = "Edit Data Siswa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnEdit
             // 
-            this.button1.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(309, 65);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 6;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEdit.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEdit.Location = new System.Drawing.Point(309, 65);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(150, 150);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button3
+            // btnAdd
             // 
-            this.button3.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(70, 65);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 150);
-            this.button3.TabIndex = 4;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAdd.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.Location = new System.Drawing.Point(70, 65);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(150, 150);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // ModulSiswa
             // 
@@ -81,10 +83,10 @@ namespace Ibuprofen.ModulKurikulum
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.btnAdd);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModulSiswa";
             this.Text = "Menu Peserta Didik";
             this.ResumeLayout(false);
@@ -94,8 +96,8 @@ namespace Ibuprofen.ModulKurikulum
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

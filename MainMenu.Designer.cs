@@ -29,61 +29,61 @@ namespace Ibuprofen
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnSiswa = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.Button();
+            this.btnMapel = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblIntro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // btnSiswa
             // 
-            this.button1.BackgroundImage = global::Ibuprofen.Properties.Resources.write;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(47, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 1;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSiswa.BackgroundImage = global::Ibuprofen.Properties.Resources.write;
+            this.btnSiswa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSiswa.Location = new System.Drawing.Point(47, 160);
+            this.btnSiswa.Name = "btnSiswa";
+            this.btnSiswa.Size = new System.Drawing.Size(150, 150);
+            this.btnSiswa.TabIndex = 1;
+            this.btnSiswa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSiswa.UseVisualStyleBackColor = true;
+            this.btnSiswa.Click += new System.EventHandler(this.btnSiswa_Click);
             // 
-            // button2
+            // btnStaff
             // 
-            this.button2.BackgroundImage = global::Ibuprofen.Properties.Resources.manager;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(254, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 150);
-            this.button2.TabIndex = 1;
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnStaff.BackgroundImage = global::Ibuprofen.Properties.Resources.manager;
+            this.btnStaff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStaff.Location = new System.Drawing.Point(254, 160);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(150, 150);
+            this.btnStaff.TabIndex = 1;
+            this.btnStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
             // 
-            // button3
+            // btnMapel
             // 
-            this.button3.BackgroundImage = global::Ibuprofen.Properties.Resources.file;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(463, 160);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 150);
-            this.button3.TabIndex = 1;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnMapel.BackgroundImage = global::Ibuprofen.Properties.Resources.file;
+            this.btnMapel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMapel.Location = new System.Drawing.Point(463, 160);
+            this.btnMapel.Name = "btnMapel";
+            this.btnMapel.Size = new System.Drawing.Size(150, 150);
+            this.btnMapel.TabIndex = 1;
+            this.btnMapel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMapel.UseVisualStyleBackColor = true;
+            this.btnMapel.Click += new System.EventHandler(this.btnMapel_Click);
             // 
-            // button4
+            // btnLogout
             // 
-            this.button4.Location = new System.Drawing.Point(538, 28);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Logout";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnLogout.Location = new System.Drawing.Point(538, 28);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // label1
             // 
@@ -129,10 +129,10 @@ namespace Ibuprofen
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogout);
+            this.Controls.Add(this.btnMapel);
+            this.Controls.Add(this.btnStaff);
+            this.Controls.Add(this.btnSiswa);
             this.Controls.Add(this.lblIntro);
             this.Name = "MainMenu";
             this.Text = "Menu Utama";
@@ -142,10 +142,10 @@ namespace Ibuprofen
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSiswa;
+        private System.Windows.Forms.Button btnStaff;
+        private System.Windows.Forms.Button btnMapel;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
