@@ -62,6 +62,12 @@
     <Compile Include="MainMenu.Designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModulKurikulum\ModulAddKurikulum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulKurikulum\ModulAddKurikulum.Designer.cs">
+      <DependentUpon>ModulAddKurikulum.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModulKurikulum\ModulEditKurikulum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,11 +80,23 @@
     <Compile Include="ModulKurikulum\ModulKurikulum.Designer.cs">
       <DependentUpon>ModulKurikulum.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModulSiswa\ModulAddSiswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulSiswa\ModulAddSiswa.Designer.cs">
+      <DependentUpon>ModulAddSiswa.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModulSiswa\ModulSiswa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModulSiswa\ModulSiswa.Designer.cs">
       <DependentUpon>ModulSiswa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModulStaff\ModulAddStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModulStaff\ModulAddStaff.Designer.cs">
+      <DependentUpon>ModulAddStaff.cs</DependentUpon>
     </Compile>
     <Compile Include="ModulStaff\ModulEditStaff.cs">
       <SubType>Form</SubType>
@@ -106,17 +124,26 @@
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModulKurikulum\ModulAddKurikulum.resx">
+      <DependentUpon>ModulAddKurikulum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModulKurikulum\ModulEditKurikulum.resx">
       <DependentUpon>ModulEditKurikulum.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModulKurikulum\ModulKurikulum.resx">
       <DependentUpon>ModulKurikulum.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModulSiswa\ModulAddSiswa.resx">
+      <DependentUpon>ModulAddSiswa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModulSiswa\ModulEditSiswa.resx">
       <DependentUpon>ModulEditSiswa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModulSiswa\ModulSiswa.resx">
       <DependentUpon>ModulSiswa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModulStaff\ModulAddStaff.resx">
+      <DependentUpon>ModulAddStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModulStaff\ModulEditStaff.resx">
       <DependentUpon>ModulEditStaff.cs</DependentUpon>
