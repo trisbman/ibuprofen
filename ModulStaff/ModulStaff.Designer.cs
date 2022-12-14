@@ -33,11 +33,13 @@ namespace Ibuprofen.ModulStaff
             this.label3 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(320, 213);
+            this.label1.Location = new System.Drawing.Point(536, 211);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 31);
             this.label1.TabIndex = 11;
@@ -46,7 +48,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(81, 213);
+            this.label3.Location = new System.Drawing.Point(301, 211);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 31);
             this.label3.TabIndex = 9;
@@ -57,7 +59,7 @@ namespace Ibuprofen.ModulStaff
             // 
             this.btnEdit.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEdit.Location = new System.Drawing.Point(311, 58);
+            this.btnEdit.Location = new System.Drawing.Point(527, 56);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(150, 150);
             this.btnEdit.TabIndex = 10;
@@ -69,18 +71,43 @@ namespace Ibuprofen.ModulStaff
             // 
             this.btnAdd.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.Location = new System.Drawing.Point(72, 58);
+            this.btnAdd.Location = new System.Drawing.Point(292, 56);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 150);
             this.btnAdd.TabIndex = 8;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(69, 211);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 31);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Kembali ke Menu Utama";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.BackgroundImage = global::Ibuprofen.Properties.Resources.back;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 5;
+            this.button1.Location = new System.Drawing.Point(60, 56);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 150);
+            this.button1.TabIndex = 12;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // ModulStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 291);
+            this.ClientSize = new System.Drawing.Size(757, 291);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label3);
@@ -97,5 +124,7 @@ namespace Ibuprofen.ModulStaff
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -46,6 +46,7 @@ namespace Ibuprofen
             this.label5 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabData.SuspendLayout();
@@ -53,10 +54,9 @@ namespace Ibuprofen
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(1064, 35);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button4.Location = new System.Drawing.Point(709, 12);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(112, 35);
+            this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 5;
             this.button4.Text = "Logout";
             this.button4.UseVisualStyleBackColor = true;
@@ -66,11 +66,9 @@ namespace Ibuprofen
             // 
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.lstStaff);
-            this.groupBox2.Location = new System.Drawing.Point(18, 83);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 54);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(416, 591);
+            this.groupBox2.Size = new System.Drawing.Size(277, 356);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pilih Staff";
@@ -78,10 +76,9 @@ namespace Ibuprofen
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(10, 540);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.checkBox1.Location = new System.Drawing.Point(6, 324);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(189, 24);
+            this.checkBox1.Size = new System.Drawing.Size(129, 17);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "Hanya tampilkan guru";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -89,27 +86,23 @@ namespace Ibuprofen
             // lstStaff
             // 
             this.lstStaff.FormattingEnabled = true;
-            this.lstStaff.ItemHeight = 20;
-            this.lstStaff.Location = new System.Drawing.Point(9, 29);
-            this.lstStaff.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstStaff.Location = new System.Drawing.Point(6, 19);
             this.lstStaff.Name = "lstStaff";
-            this.lstStaff.Size = new System.Drawing.Size(396, 484);
+            this.lstStaff.Size = new System.Drawing.Size(265, 290);
             this.lstStaff.TabIndex = 3;
             this.lstStaff.SelectedIndexChanged += new System.EventHandler(this.lstStaff_SelectedIndexChanged);
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabData);
-            this.tabControl1.Location = new System.Drawing.Point(456, 83);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Location = new System.Drawing.Point(304, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(726, 591);
+            this.tabControl1.Size = new System.Drawing.Size(484, 356);
             this.tabControl1.TabIndex = 7;
             // 
             // tabData
             // 
-            this.tabData.Controls.Add(this.btnUbah);
             this.tabData.Controls.Add(this.cboJk);
             this.tabData.Controls.Add(this.txtNotelp);
             this.tabData.Controls.Add(this.label9);
@@ -120,21 +113,19 @@ namespace Ibuprofen
             this.tabData.Controls.Add(this.label5);
             this.tabData.Controls.Add(this.txtId);
             this.tabData.Controls.Add(this.label4);
-            this.tabData.Location = new System.Drawing.Point(4, 29);
-            this.tabData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabData.Location = new System.Drawing.Point(4, 22);
             this.tabData.Name = "tabData";
-            this.tabData.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabData.Size = new System.Drawing.Size(718, 558);
+            this.tabData.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabData.Size = new System.Drawing.Size(476, 330);
             this.tabData.TabIndex = 0;
             this.tabData.Text = "Ubah Data";
             this.tabData.UseVisualStyleBackColor = true;
             // 
             // btnUbah
             // 
-            this.btnUbah.Location = new System.Drawing.Point(542, 478);
-            this.btnUbah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnUbah.Location = new System.Drawing.Point(709, 416);
             this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(112, 35);
+            this.btnUbah.Size = new System.Drawing.Size(75, 23);
             this.btnUbah.TabIndex = 5;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = true;
@@ -144,106 +135,106 @@ namespace Ibuprofen
             // 
             this.cboJk.Enabled = false;
             this.cboJk.FormattingEnabled = true;
-            this.cboJk.Location = new System.Drawing.Point(231, 197);
-            this.cboJk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboJk.Location = new System.Drawing.Point(154, 128);
             this.cboJk.Name = "cboJk";
-            this.cboJk.Size = new System.Drawing.Size(421, 28);
+            this.cboJk.Size = new System.Drawing.Size(282, 21);
             this.cboJk.TabIndex = 16;
             // 
             // txtNotelp
             // 
-            this.txtNotelp.Location = new System.Drawing.Point(231, 343);
-            this.txtNotelp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNotelp.Location = new System.Drawing.Point(154, 223);
             this.txtNotelp.Name = "txtNotelp";
-            this.txtNotelp.Size = new System.Drawing.Size(421, 26);
+            this.txtNotelp.Size = new System.Drawing.Size(282, 20);
             this.txtNotelp.TabIndex = 11;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(63, 348);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(42, 226);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(90, 20);
+            this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 5;
             this.label9.Text = "No Telepon";
             // 
             // txtTtl
             // 
             this.txtTtl.Enabled = false;
-            this.txtTtl.Location = new System.Drawing.Point(231, 269);
-            this.txtTtl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTtl.Location = new System.Drawing.Point(154, 175);
             this.txtTtl.Name = "txtTtl";
-            this.txtTtl.Size = new System.Drawing.Size(421, 26);
+            this.txtTtl.Size = new System.Drawing.Size(282, 20);
             this.txtTtl.TabIndex = 12;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(63, 274);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(42, 178);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 20);
+            this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 6;
             this.label8.Text = "Tempat, Tgl Lahir";
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(231, 131);
-            this.txtNama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNama.Location = new System.Drawing.Point(154, 85);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(421, 26);
+            this.txtNama.Size = new System.Drawing.Size(282, 20);
             this.txtNama.TabIndex = 14;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 202);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(42, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 8;
             this.label6.Text = "Jenis Kelamin";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 135);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(42, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Nama";
             // 
             // txtId
             // 
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(231, 62);
-            this.txtId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtId.Location = new System.Drawing.Point(154, 40);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(421, 26);
+            this.txtId.Size = new System.Drawing.Size(282, 20);
             this.txtId.TabIndex = 15;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(63, 66);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(42, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 20);
+            this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "ID";
             // 
-            // ModulStaff
+            // button1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.button1.Location = new System.Drawing.Point(12, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Kembali";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // ModulEditStaff
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 692);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button4);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "ModulStaff";
+            this.Name = "ModulEditStaff";
             this.Text = "Pengelolaan Staff & Guru";
             this.Load += new System.EventHandler(this.ModulStaff_Load);
             this.groupBox2.ResumeLayout(false);
@@ -273,5 +264,6 @@ namespace Ibuprofen
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

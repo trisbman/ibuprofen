@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Ibuprofen.ModulKurikulum
 {
-    public partial class ModulAddKurikulum : Form
+    public partial class ModulKurikulumOld : Form
     {
-        public ModulAddKurikulum()
+        public ModulKurikulumOld()
         {
             InitializeComponent();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            Dispose(); Close();
+            ModulKurikulum modulEditKurikulum = new ModulKurikulum();
+            modulEditKurikulum.ShowDialog();
         }
     }
 }
