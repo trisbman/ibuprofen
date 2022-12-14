@@ -19,9 +19,26 @@ namespace Ibuprofen.ModulStaff
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            Dispose(); Close();
+            Hide();
             ModulEditStaff modulEditStaff = new ModulEditStaff();
             modulEditStaff.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Hide();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ModulAddStaff modulAddStaff = new ModulAddStaff();
+            modulAddStaff.ShowDialog();
+            Dispose(); Close();
         }
     }
 }

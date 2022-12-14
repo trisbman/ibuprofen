@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ibuprofen.ModulSiswa;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -141,6 +142,14 @@ namespace Ibuprofen.ModulKurikulum
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            Dispose(); Close();
         }
     }
 }

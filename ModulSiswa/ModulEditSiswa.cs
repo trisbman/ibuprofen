@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Ibuprofen.Database;
 
-namespace Ibuprofen
+namespace Ibuprofen.ModulSiswa
 {
     public partial class ModulEditSiswa : Form
     {
@@ -388,15 +388,23 @@ namespace Ibuprofen
 
         private void Logout(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Hide();
             Login login = new Login();
             login.ShowDialog();
+            Dispose(); Close();
         }
 
         private void dtpAbsensi_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ModulSiswa modulSiswa = new ModulSiswa();
+            modulSiswa.ShowDialog();
+            Dispose(); Close();
         }
     }
 }

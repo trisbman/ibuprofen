@@ -55,8 +55,8 @@ namespace Ibuprofen.ModulStaff
             this.txtKotaLahir = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -307,31 +307,33 @@ namespace Ibuprofen.ModulStaff
             this.btnSave.Text = "Simpan";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnLogout
             // 
-            this.button3.Location = new System.Drawing.Point(700, 18);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "Logout";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(700, 18);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 39;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.Location = new System.Drawing.Point(26, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Kembali";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBack.Location = new System.Drawing.Point(26, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 40;
+            this.btnBack.Text = "Kembali";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ModulAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -377,7 +379,7 @@ namespace Ibuprofen.ModulStaff
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btnBack;
     }
 }

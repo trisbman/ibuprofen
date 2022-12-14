@@ -12,6 +12,12 @@ namespace Ibuprofen
 {
     public partial class MainMenu : Form
     {
+        public MainMenu()
+        {
+
+            InitializeComponent();
+        }
+
         public MainMenu(string username)
         {
             InitializeComponent();
@@ -23,33 +29,33 @@ namespace Ibuprofen
 
         private void btnSiswa_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Hide();
             ModulSiswa.ModulSiswa modulSiswa = new ModulSiswa.ModulSiswa();
             modulSiswa.ShowDialog();
+            Dispose(); Close();
         }
 
         private void btnStaff_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Hide();
             ModulStaff.ModulStaff modulStaff = new ModulStaff.ModulStaff();
             modulStaff.ShowDialog();
+            Dispose(); Close();
         }
 
         private void btnMapel_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Hide();
             ModulKurikulum.ModulKurikulum modulKurikulum = new ModulKurikulum.ModulKurikulum();
             modulKurikulum.ShowDialog();
+            Dispose(); Close();
         }
         private void logoutBtn_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Hide();
             Login login = new Login();
             login.ShowDialog();
+            Dispose(); Close();
         }
     }
 }

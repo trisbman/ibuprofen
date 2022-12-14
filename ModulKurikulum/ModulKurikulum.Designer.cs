@@ -30,6 +30,7 @@ namespace Ibuprofen.ModulKurikulum
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lstMapel = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -58,8 +59,7 @@ namespace Ibuprofen.ModulKurikulum
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnUbah = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabData.SuspendLayout();
@@ -85,6 +85,15 @@ namespace Ibuprofen.ModulKurikulum
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pilih Mata Pelajaran";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 326);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(128, 31);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Tambah";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(143, 326);
@@ -105,7 +114,7 @@ namespace Ibuprofen.ModulKurikulum
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 415);
+            this.button3.Location = new System.Drawing.Point(12, 12);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -184,7 +193,7 @@ namespace Ibuprofen.ModulKurikulum
             this.tabScore.Location = new System.Drawing.Point(4, 22);
             this.tabScore.Name = "tabScore";
             this.tabScore.Padding = new System.Windows.Forms.Padding(3);
-            this.tabScore.Size = new System.Drawing.Size(476, 368);
+            this.tabScore.Size = new System.Drawing.Size(476, 337);
             this.tabScore.TabIndex = 1;
             this.tabScore.Text = "Pengaturan KKM";
             this.tabScore.UseVisualStyleBackColor = true;
@@ -259,7 +268,7 @@ namespace Ibuprofen.ModulKurikulum
             this.tabAttendance.Controls.Add(this.groupBox1);
             this.tabAttendance.Location = new System.Drawing.Point(4, 22);
             this.tabAttendance.Name = "tabAttendance";
-            this.tabAttendance.Size = new System.Drawing.Size(476, 368);
+            this.tabAttendance.Size = new System.Drawing.Size(476, 337);
             this.tabAttendance.TabIndex = 2;
             this.tabAttendance.Text = "Pengaturan Kelas";
             this.tabAttendance.UseVisualStyleBackColor = true;
@@ -358,35 +367,27 @@ namespace Ibuprofen.ModulKurikulum
             this.btnUbah.UseVisualStyleBackColor = true;
             this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
             // 
-            // button2
+            // btnLogout
             // 
-            this.button2.Location = new System.Drawing.Point(6, 326);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(128, 31);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Tambah";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(709, 14);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 40;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(709, 14);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "Logout";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // ModulEditKurikulum
+            // ModulKurikulum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
-            this.Name = "ModulEditKurikulum";
+            this.Name = "ModulKurikulum";
             this.Text = "Pengelolaan Materi Pembelajaran";
             this.Load += new System.EventHandler(this.ModulKurikulum_Load);
             this.groupBox2.ResumeLayout(false);
@@ -440,6 +441,6 @@ namespace Ibuprofen.ModulKurikulum
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown nudTugas;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

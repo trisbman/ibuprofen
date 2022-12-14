@@ -1,5 +1,5 @@
 ﻿
-namespace Ibuprofen
+namespace Ibuprofen.ModulSiswa
 {
     partial class ModulEditSiswa
     {
@@ -73,8 +73,8 @@ namespace Ibuprofen
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabData.SuspendLayout();
             this.tabScore.SuspendLayout();
@@ -530,34 +530,35 @@ namespace Ibuprofen
             this.label2.TabIndex = 2;
             this.label2.Text = "Tingkat";
             // 
-            // button3
+            // btnLogout
             // 
-            this.button3.Location = new System.Drawing.Point(709, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Logout";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Logout);
+            this.btnLogout.Location = new System.Drawing.Point(709, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(75, 23);
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.Logout);
             // 
-            // button5
+            // btnBack
             // 
-            this.button5.Location = new System.Drawing.Point(12, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Kembali";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 7;
+            this.btnBack.Text = "Kembali";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ModulEditSiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnUbah);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.tabControl1);
             this.Name = "ModulEditSiswa";
             this.Text = "Pengelolaan Peserta Didik";
@@ -625,8 +626,8 @@ namespace Ibuprofen
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cboKelas;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBack;
     }
 }

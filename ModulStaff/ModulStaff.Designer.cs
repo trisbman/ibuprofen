@@ -34,7 +34,7 @@ namespace Ibuprofen.ModulStaff
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -77,6 +77,7 @@ namespace Ibuprofen.ModulStaff
             this.btnAdd.TabIndex = 8;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // label2
             // 
@@ -87,19 +88,20 @@ namespace Ibuprofen.ModulStaff
             this.label2.Text = "Kembali ke Menu Utama";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnBack
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.BackgroundImage = global::Ibuprofen.Properties.Resources.back;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 5;
-            this.button1.Location = new System.Drawing.Point(60, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 12;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnBack.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnBack.BackgroundImage = global::Ibuprofen.Properties.Resources.back;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBack.FlatAppearance.BorderSize = 5;
+            this.btnBack.Location = new System.Drawing.Point(60, 56);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(150, 150);
+            this.btnBack.TabIndex = 12;
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // ModulStaff
             // 
@@ -107,7 +109,7 @@ namespace Ibuprofen.ModulStaff
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 291);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label3);
@@ -125,6 +127,6 @@ namespace Ibuprofen.ModulStaff
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBack;
     }
 }

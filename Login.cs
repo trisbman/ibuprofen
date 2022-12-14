@@ -96,5 +96,10 @@ namespace Ibuprofen
                 pboEye.BackgroundImage = Properties.Resources.view;
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();            
+        }
     }
 }

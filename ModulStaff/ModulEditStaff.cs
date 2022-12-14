@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ibuprofen.ModulSiswa;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Ibuprofen.Database;
 
-namespace Ibuprofen
+namespace Ibuprofen.ModulStaff
 {
     public partial class ModulEditStaff : Form
     {
@@ -128,10 +129,18 @@ namespace Ibuprofen
 
         private void Logout(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
+            Hide();
             Login login = new Login();
             login.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ModulStaff modulStaff = new ModulStaff();
+            modulStaff.ShowDialog();
+            Dispose(); Close();
         }
     }
 }

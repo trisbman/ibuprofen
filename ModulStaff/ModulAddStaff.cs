@@ -16,5 +16,21 @@ namespace Ibuprofen.ModulStaff
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ModulStaff modulStaff = new ModulStaff();
+            modulStaff.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            Dispose(); Close();
+        }
     }
 }
