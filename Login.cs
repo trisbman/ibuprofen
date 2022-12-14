@@ -61,22 +61,23 @@ namespace Ibuprofen
         private void btnLogin_Click(object sender, EventArgs e)
         {
             DataRow result = Authenticate();
+            string loginTitle = "Login";
 
             if (result != null)
             {
                 if (result[1].ToString() == txtPassword.Text)
                 {
-                    MessageBox.Show("Login berhasil!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Login berhasil!\nSelamat datang kembali " + txtUsername.Text + "!", loginTitle, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Continue();
                 }
                 else
                 {
-                    MessageBox.Show("Login gagal!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Login gagal! Password tidak sesuai!", loginTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("User " + txtUsername.Text + " tidak terdaftar!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("User " + txtUsername.Text + " tidak terdaftar!", loginTitle, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

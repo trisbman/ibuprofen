@@ -35,6 +35,8 @@ namespace Ibuprofen.ModulStaff
             this.lstStaff = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabData = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cboJk = new System.Windows.Forms.ComboBox();
             this.txtNotelp = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -43,13 +45,21 @@ namespace Ibuprofen.ModulStaff
             this.txtNama = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.cboMapel = new System.Windows.Forms.ComboBox();
+            this.rdoGuruT = new System.Windows.Forms.RadioButton();
+            this.rdoGuruY = new System.Windows.Forms.RadioButton();
+            this.nudGaji = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabData.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGaji)).BeginInit();
             this.SuspendLayout();
             // 
             // btnLogout
@@ -95,6 +105,7 @@ namespace Ibuprofen.ModulStaff
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabData);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Location = new System.Drawing.Point(304, 54);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -103,6 +114,8 @@ namespace Ibuprofen.ModulStaff
             // 
             // tabData
             // 
+            this.tabData.Controls.Add(this.textBox1);
+            this.tabData.Controls.Add(this.label1);
             this.tabData.Controls.Add(this.cboJk);
             this.tabData.Controls.Add(this.txtNotelp);
             this.tabData.Controls.Add(this.label9);
@@ -111,28 +124,43 @@ namespace Ibuprofen.ModulStaff
             this.tabData.Controls.Add(this.txtNama);
             this.tabData.Controls.Add(this.label6);
             this.tabData.Controls.Add(this.label5);
-            this.tabData.Controls.Add(this.txtId);
-            this.tabData.Controls.Add(this.label4);
             this.tabData.Location = new System.Drawing.Point(4, 22);
             this.tabData.Name = "tabData";
             this.tabData.Padding = new System.Windows.Forms.Padding(3);
             this.tabData.Size = new System.Drawing.Size(476, 330);
             this.tabData.TabIndex = 0;
-            this.tabData.Text = "Ubah Data";
+            this.tabData.Text = "Data Pribadi";
             this.tabData.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(152, 234);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(282, 53);
+            this.textBox1.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(40, 237);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Alamat";
             // 
             // cboJk
             // 
             this.cboJk.Enabled = false;
             this.cboJk.FormattingEnabled = true;
-            this.cboJk.Location = new System.Drawing.Point(154, 128);
+            this.cboJk.Location = new System.Drawing.Point(152, 95);
             this.cboJk.Name = "cboJk";
             this.cboJk.Size = new System.Drawing.Size(282, 21);
             this.cboJk.TabIndex = 16;
             // 
             // txtNotelp
             // 
-            this.txtNotelp.Location = new System.Drawing.Point(154, 223);
+            this.txtNotelp.Location = new System.Drawing.Point(152, 190);
             this.txtNotelp.Name = "txtNotelp";
             this.txtNotelp.Size = new System.Drawing.Size(282, 20);
             this.txtNotelp.TabIndex = 11;
@@ -140,7 +168,7 @@ namespace Ibuprofen.ModulStaff
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(42, 226);
+            this.label9.Location = new System.Drawing.Point(40, 193);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 5;
@@ -149,7 +177,7 @@ namespace Ibuprofen.ModulStaff
             // txtTtl
             // 
             this.txtTtl.Enabled = false;
-            this.txtTtl.Location = new System.Drawing.Point(154, 175);
+            this.txtTtl.Location = new System.Drawing.Point(152, 142);
             this.txtTtl.Name = "txtTtl";
             this.txtTtl.Size = new System.Drawing.Size(282, 20);
             this.txtTtl.TabIndex = 12;
@@ -157,7 +185,7 @@ namespace Ibuprofen.ModulStaff
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 178);
+            this.label8.Location = new System.Drawing.Point(40, 145);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 6;
@@ -165,7 +193,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(154, 85);
+            this.txtNama.Location = new System.Drawing.Point(152, 52);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(282, 20);
             this.txtNama.TabIndex = 14;
@@ -173,7 +201,7 @@ namespace Ibuprofen.ModulStaff
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 131);
+            this.label6.Location = new System.Drawing.Point(40, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 13);
             this.label6.TabIndex = 8;
@@ -182,28 +210,28 @@ namespace Ibuprofen.ModulStaff
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 88);
+            this.label5.Location = new System.Drawing.Point(40, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 9;
             this.label5.Text = "Nama";
             // 
-            // txtId
+            // tabPage1
             // 
-            this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(154, 40);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(282, 20);
-            this.txtId.TabIndex = 15;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(18, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "ID";
+            this.tabPage1.Controls.Add(this.cboMapel);
+            this.tabPage1.Controls.Add(this.rdoGuruT);
+            this.tabPage1.Controls.Add(this.rdoGuruY);
+            this.tabPage1.Controls.Add(this.nudGaji);
+            this.tabPage1.Controls.Add(this.label11);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(476, 330);
+            this.tabPage1.TabIndex = 1;
+            this.tabPage1.Text = "Data Pekerjaan";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnUbah
             // 
@@ -225,6 +253,90 @@ namespace Ibuprofen.ModulStaff
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // cboMapel
+            // 
+            this.cboMapel.FormattingEnabled = true;
+            this.cboMapel.Location = new System.Drawing.Point(162, 140);
+            this.cboMapel.Name = "cboMapel";
+            this.cboMapel.Size = new System.Drawing.Size(178, 21);
+            this.cboMapel.TabIndex = 48;
+            // 
+            // rdoGuruT
+            // 
+            this.rdoGuruT.AutoSize = true;
+            this.rdoGuruT.Location = new System.Drawing.Point(251, 90);
+            this.rdoGuruT.Name = "rdoGuruT";
+            this.rdoGuruT.Size = new System.Drawing.Size(52, 17);
+            this.rdoGuruT.TabIndex = 47;
+            this.rdoGuruT.TabStop = true;
+            this.rdoGuruT.Text = "Tidak";
+            this.rdoGuruT.UseVisualStyleBackColor = true;
+            // 
+            // rdoGuruY
+            // 
+            this.rdoGuruY.AutoSize = true;
+            this.rdoGuruY.Location = new System.Drawing.Point(162, 97);
+            this.rdoGuruY.Name = "rdoGuruY";
+            this.rdoGuruY.Size = new System.Drawing.Size(38, 17);
+            this.rdoGuruY.TabIndex = 46;
+            this.rdoGuruY.TabStop = true;
+            this.rdoGuruY.Text = "Ya";
+            this.rdoGuruY.UseVisualStyleBackColor = true;
+            // 
+            // nudGaji
+            // 
+            this.nudGaji.Increment = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudGaji.Location = new System.Drawing.Point(162, 47);
+            this.nudGaji.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudGaji.Minimum = new decimal(new int[] {
+            2500000,
+            0,
+            0,
+            0});
+            this.nudGaji.Name = "nudGaji";
+            this.nudGaji.Size = new System.Drawing.Size(178, 20);
+            this.nudGaji.TabIndex = 45;
+            this.nudGaji.Value = new decimal(new int[] {
+            30000000,
+            0,
+            0,
+            0});
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(41, 49);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 13);
+            this.label11.TabIndex = 43;
+            this.label11.Text = "Gaji/Bulan";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(40, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.TabIndex = 44;
+            this.label10.Text = "Mata Pelajaran";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(41, 97);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(76, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "Apakah Guru?";
+            // 
             // ModulEditStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +355,9 @@ namespace Ibuprofen.ModulStaff
             this.tabControl1.ResumeLayout(false);
             this.tabData.ResumeLayout(false);
             this.tabData.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGaji)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -262,9 +377,17 @@ namespace Ibuprofen.ModulStaff
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboMapel;
+        private System.Windows.Forms.RadioButton rdoGuruT;
+        private System.Windows.Forms.RadioButton rdoGuruY;
+        private System.Windows.Forms.NumericUpDown nudGaji;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
     }
 }

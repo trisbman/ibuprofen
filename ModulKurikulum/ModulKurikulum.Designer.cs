@@ -122,7 +122,7 @@ namespace Ibuprofen.ModulKurikulum
             this.button3.TabIndex = 8;
             this.button3.Text = "Kembali";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Logout);
+            this.button3.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // tabControl1
             // 

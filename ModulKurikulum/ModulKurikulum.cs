@@ -28,12 +28,12 @@ namespace Ibuprofen.ModulKurikulum
             InitializeComponent();
         }
 
-        private void Logout(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
-            Dispose();
-            Close();
-            Login login = new Login();
-            login.ShowDialog();
+            Hide();
+            MainMenu menu = new MainMenu();
+            menu.ShowDialog();
+            Dispose(); Close();
         }
 
         private void ModulKurikulum_Load(object sender, EventArgs e)

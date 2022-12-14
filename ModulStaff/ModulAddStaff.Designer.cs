@@ -30,12 +30,10 @@ namespace Ibuprofen.ModulStaff
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nudGaji = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtIbu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtAyah = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtNisn = new System.Windows.Forms.TextBox();
             this.cboTingkat = new System.Windows.Forms.ComboBox();
@@ -57,74 +55,84 @@ namespace Ibuprofen.ModulStaff
             this.btnSave = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.rdoGuruY = new System.Windows.Forms.RadioButton();
+            this.rdoGuruT = new System.Windows.Forms.RadioButton();
+            this.cboMapel = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGaji)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.numericUpDown1);
+            this.groupBox3.Controls.Add(this.cboMapel);
+            this.groupBox3.Controls.Add(this.rdoGuruT);
+            this.groupBox3.Controls.Add(this.rdoGuruY);
+            this.groupBox3.Controls.Add(this.nudGaji);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.txtIbu);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.txtAyah);
-            this.groupBox3.Location = new System.Drawing.Point(399, 208);
+            this.groupBox3.Location = new System.Drawing.Point(399, 202);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(376, 197);
+            this.groupBox3.Size = new System.Drawing.Size(376, 203);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Data Wajib Pajak";
+            this.groupBox3.Text = "Data Pekerjaan";
             // 
-            // numericUpDown1
+            // nudGaji
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(148, 133);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(182, 20);
-            this.numericUpDown1.TabIndex = 38;
+            this.nudGaji.Increment = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudGaji.Location = new System.Drawing.Point(148, 52);
+            this.nudGaji.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
+            this.nudGaji.Minimum = new decimal(new int[] {
+            2500000,
+            0,
+            0,
+            0});
+            this.nudGaji.Name = "nudGaji";
+            this.nudGaji.Size = new System.Drawing.Size(182, 20);
+            this.nudGaji.TabIndex = 38;
+            this.nudGaji.Value = new decimal(new int[] {
+            30000000,
+            0,
+            0,
+            0});
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 135);
+            this.label11.Location = new System.Drawing.Point(36, 54);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(84, 13);
+            this.label11.Size = new System.Drawing.Size(57, 13);
             this.label11.TabIndex = 36;
-            this.label11.Text = "Jlh Tanggungan";
+            this.label11.Text = "Gaji/Bulan";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 94);
+            this.label10.Location = new System.Drawing.Point(35, 140);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.Size = new System.Drawing.Size(78, 13);
             this.label10.TabIndex = 36;
-            this.label10.Text = "NPWP";
-            // 
-            // txtIbu
-            // 
-            this.txtIbu.Location = new System.Drawing.Point(148, 91);
-            this.txtIbu.Name = "txtIbu";
-            this.txtIbu.Size = new System.Drawing.Size(183, 20);
-            this.txtIbu.TabIndex = 37;
+            this.label10.Text = "Mata Pelajaran";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 53);
+            this.label3.Location = new System.Drawing.Point(35, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(25, 13);
+            this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 34;
-            this.label3.Text = "NIK";
-            // 
-            // txtAyah
-            // 
-            this.txtAyah.Location = new System.Drawing.Point(148, 50);
-            this.txtAyah.Name = "txtAyah";
-            this.txtAyah.Size = new System.Drawing.Size(183, 20);
-            this.txtAyah.TabIndex = 35;
+            this.label3.Text = "Apakah Guru?";
             // 
             // groupBox2
             // 
@@ -134,7 +142,7 @@ namespace Ibuprofen.ModulStaff
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(399, 49);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(376, 153);
+            this.groupBox2.Size = new System.Drawing.Size(376, 147);
             this.groupBox2.TabIndex = 35;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Akademis";
@@ -327,6 +335,36 @@ namespace Ibuprofen.ModulStaff
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // rdoGuruY
+            // 
+            this.rdoGuruY.AutoSize = true;
+            this.rdoGuruY.Location = new System.Drawing.Point(147, 99);
+            this.rdoGuruY.Name = "rdoGuruY";
+            this.rdoGuruY.Size = new System.Drawing.Size(38, 17);
+            this.rdoGuruY.TabIndex = 39;
+            this.rdoGuruY.TabStop = true;
+            this.rdoGuruY.Text = "Ya";
+            this.rdoGuruY.UseVisualStyleBackColor = true;
+            // 
+            // rdoGuruT
+            // 
+            this.rdoGuruT.AutoSize = true;
+            this.rdoGuruT.Location = new System.Drawing.Point(232, 99);
+            this.rdoGuruT.Name = "rdoGuruT";
+            this.rdoGuruT.Size = new System.Drawing.Size(52, 17);
+            this.rdoGuruT.TabIndex = 40;
+            this.rdoGuruT.TabStop = true;
+            this.rdoGuruT.Text = "Tidak";
+            this.rdoGuruT.UseVisualStyleBackColor = true;
+            // 
+            // cboMapel
+            // 
+            this.cboMapel.FormattingEnabled = true;
+            this.cboMapel.Location = new System.Drawing.Point(148, 138);
+            this.cboMapel.Name = "cboMapel";
+            this.cboMapel.Size = new System.Drawing.Size(182, 21);
+            this.cboMapel.TabIndex = 41;
+            // 
             // ModulAddStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +380,7 @@ namespace Ibuprofen.ModulStaff
             this.Text = "Menu Tambah Staff";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudGaji)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -355,9 +393,7 @@ namespace Ibuprofen.ModulStaff
 
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtIbu;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtAyah;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtNisn;
         private System.Windows.Forms.ComboBox cboTingkat;
@@ -377,9 +413,12 @@ namespace Ibuprofen.ModulStaff
         private System.Windows.Forms.TextBox txtKotaLahir;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudGaji;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ComboBox cboMapel;
+        private System.Windows.Forms.RadioButton rdoGuruT;
+        private System.Windows.Forms.RadioButton rdoGuruY;
     }
 }
