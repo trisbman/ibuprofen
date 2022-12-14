@@ -5,11 +5,14 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Ibuprofen.Database;
+using Microsoft.Office.Interop.Excel;
+using DataTable = System.Data.DataTable;
 
 namespace Ibuprofen.ModulSiswa
 {
@@ -409,6 +412,61 @@ namespace Ibuprofen.ModulSiswa
             ModulEditSiswa modulSiswa = new ModulEditSiswa();
             modulSiswa.ShowDialog();
             Dispose(); Close();
+        }
+
+        private void btnScoreReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GenerateScoreReport();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void GenerateScoreReport()
+        {
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            xlApp.Workbooks.Add();
+            Workbook workBook = xlApp.ActiveWorkbook;            
+            Worksheet workSheet = xlApp.ActiveSheet;
+
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            int studentId = (int)studentRv["ID_Siswa"];
+            string ex = $"ID_Siswa = '{studentId}'";
+            DataRow[] courseRows = dataSet.Tables[Table.SCORE].Select(ex);
+
+            #region Populate sheet
+            workSheet.Cells[1, "A"] = "Nama"; workSheet.Cells[1, "B"] = studentRv["Nama"];
+            workSheet.Cells[2, "A"] = "Tingkat"; workSheet.Cells[2, "B"] = studentRv["Tingkat"];
+
+            var bodyStartRow = 3;
+            workSheet.Cells[bodyStartRow, "A"] = "Mata Pelajaran";
+            workSheet.Cells[bodyStartRow, "B"] = "Nilai";
+            workSheet.Cells[bodyStartRow + 1, "B"] = "Tugas";
+            workSheet.Cells[bodyStartRow + 1, "C"] = "Tugas Tambahan";
+            workSheet.Cells[bodyStartRow + 1, "D"] = "Ujian";
+            workSheet.Cells[bodyStartRow + 1, "E"] = "Remedial";
+            var bodyEndRow = bodyStartRow + 1;
+            foreach (DataRow courseRow in courseRows)
+            {
+                bodyEndRow++;
+                int courseId = (int)courseRow["ID_Mapel"];
+                string courseName = (string)dsView.DataSet.Tables[Table.COURSE].Rows.Find(courseId)["Nama"];
+                workSheet.Cells[bodyEndRow, "A"] = courseName;
+                workSheet.Cells[bodyEndRow, "B"] = courseRow["Tugas"];
+                workSheet.Cells[bodyEndRow, "C"] = courseRow["Tugas_Tambahan"];
+                workSheet.Cells[bodyEndRow, "D"] = courseRow["Ujian"];
+                workSheet.Cells[bodyEndRow, "E"] = courseRow["Remedial"];
+            }
+
+            workSheet.Range["A" + bodyStartRow, "E" + bodyEndRow].AutoFormat(XlRangeAutoFormat.xlRangeAutoFormatClassic2);
+            #endregion            
+            xlApp.Visible = true;
         }
     }
 }
