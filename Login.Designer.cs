@@ -92,7 +92,7 @@ namespace Ibuprofen
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(224, 23);
             this.btnLogin.TabIndex = 3;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "L&ogin";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -115,7 +115,7 @@ namespace Ibuprofen
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(224, 23);
             this.btnExit.TabIndex = 5;
-            this.btnExit.Text = "Keluar";
+            this.btnExit.Text = "K&eluar";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 

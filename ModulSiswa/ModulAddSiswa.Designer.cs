@@ -76,7 +76,7 @@ namespace Ibuprofen.ModulSiswa
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(700, 403);
+            this.btnSave.Location = new System.Drawing.Point(700, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 17;
@@ -85,7 +85,6 @@ namespace Ibuprofen.ModulSiswa
             // 
             // cboJk
             // 
-            this.cboJk.Enabled = false;
             this.cboJk.FormattingEnabled = true;
             this.cboJk.Location = new System.Drawing.Point(147, 83);
             this.cboJk.Name = "cboJk";
@@ -110,7 +109,6 @@ namespace Ibuprofen.ModulSiswa
             // 
             // txtKotaLahir
             // 
-            this.txtKotaLahir.Enabled = false;
             this.txtKotaLahir.Location = new System.Drawing.Point(147, 127);
             this.txtKotaLahir.Name = "txtKotaLahir";
             this.txtKotaLahir.Size = new System.Drawing.Size(183, 20);
@@ -161,7 +159,6 @@ namespace Ibuprofen.ModulSiswa
             // 
             // txtNisn
             // 
-            this.txtNisn.Enabled = false;
             this.txtNisn.Location = new System.Drawing.Point(148, 43);
             this.txtNisn.Name = "txtNisn";
             this.txtNisn.Size = new System.Drawing.Size(183, 20);
@@ -192,7 +189,7 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(26, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 337);
+            this.groupBox1.Size = new System.Drawing.Size(366, 349);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Pribadi";
@@ -218,7 +215,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtAlamat.Location = new System.Drawing.Point(147, 249);
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
-            this.txtAlamat.Size = new System.Drawing.Size(183, 73);
+            this.txtAlamat.Size = new System.Drawing.Size(183, 71);
             this.txtAlamat.TabIndex = 31;
             // 
             // label1
@@ -272,9 +269,9 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox3.Controls.Add(this.txtIbu);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtAyah);
-            this.groupBox3.Location = new System.Drawing.Point(398, 233);
+            this.groupBox3.Location = new System.Drawing.Point(398, 242);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(376, 156);
+            this.groupBox3.Size = new System.Drawing.Size(376, 159);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data Orangtua";

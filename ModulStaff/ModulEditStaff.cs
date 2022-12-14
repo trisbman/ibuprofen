@@ -68,8 +68,7 @@ namespace Ibuprofen.ModulStaff
                     return;
                 }
 
-                DataRowView staffRv = (DataRowView)lstStaff.SelectedItem;
-                txtId.Text = staffRv["ID_Staff"].ToString();
+                DataRowView staffRv = (DataRowView)lstStaff.SelectedItem;                
                 txtNama.Text = staffRv["Nama"].ToString();
                 cboJk.Text = (bool)staffRv["Jenis_Kelamin"] ? "Laki-laki" : "Perempuan";
                 DateTime ttl = (DateTime)staffRv["Tanggal_Lahir"];

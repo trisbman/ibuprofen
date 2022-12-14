@@ -37,6 +37,7 @@ namespace Ibuprofen
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblIntro = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSiswa
@@ -58,7 +59,7 @@ namespace Ibuprofen
             this.btnStaff.Location = new System.Drawing.Point(254, 160);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Size = new System.Drawing.Size(150, 150);
-            this.btnStaff.TabIndex = 1;
+            this.btnStaff.TabIndex = 2;
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnStaff.UseVisualStyleBackColor = true;
             this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
@@ -70,18 +71,18 @@ namespace Ibuprofen
             this.btnMapel.Location = new System.Drawing.Point(463, 160);
             this.btnMapel.Name = "btnMapel";
             this.btnMapel.Size = new System.Drawing.Size(150, 150);
-            this.btnMapel.TabIndex = 1;
+            this.btnMapel.TabIndex = 3;
             this.btnMapel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnMapel.UseVisualStyleBackColor = true;
             this.btnMapel.Click += new System.EventHandler(this.btnMapel_Click);
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(538, 28);
+            this.btnLogout.Location = new System.Drawing.Point(444, 28);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Logout";
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.Text = "L&ogout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
@@ -121,11 +122,22 @@ namespace Ibuprofen
             this.lblIntro.TabIndex = 0;
             this.lblIntro.Text = "Hai, pengguna";
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(538, 28);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "K&eluar";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 424);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -150,5 +162,6 @@ namespace Ibuprofen
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblIntro;
+        private System.Windows.Forms.Button btnExit;
     }
 }
