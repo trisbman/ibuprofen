@@ -44,7 +44,6 @@ namespace Ibuprofen.ModulSiswa
             this.txtNisn = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tabScore = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.cboMapel = new System.Windows.Forms.ComboBox();
             this.nudRemedial = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
@@ -228,7 +227,6 @@ namespace Ibuprofen.ModulSiswa
             // 
             // tabScore
             // 
-            this.tabScore.Controls.Add(this.button4);
             this.tabScore.Controls.Add(this.cboMapel);
             this.tabScore.Controls.Add(this.nudRemedial);
             this.tabScore.Controls.Add(this.label13);
@@ -246,16 +244,6 @@ namespace Ibuprofen.ModulSiswa
             this.tabScore.TabIndex = 1;
             this.tabScore.Text = "Pengaturan Nilai";
             this.tabScore.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(358, 297);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Ubah";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnUbah_Click);
             // 
             // cboMapel
             // 
@@ -364,7 +352,7 @@ namespace Ibuprofen.ModulSiswa
             this.textBox2.Location = new System.Drawing.Point(114, 133);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(341, 201);
+            this.textBox2.Size = new System.Drawing.Size(341, 130);
             this.textBox2.TabIndex = 3;
             // 
             // cboStatus
@@ -627,7 +615,6 @@ namespace Ibuprofen.ModulSiswa
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cboKelas;
         private System.Windows.Forms.Button btnLogout;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnBack;
     }
 }

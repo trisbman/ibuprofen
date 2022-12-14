@@ -21,10 +21,6 @@ namespace Ibuprofen
         public MainMenu(string username)
         {
             InitializeComponent();
-            if (username.Length > 0)
-            {
-                lblIntro.Text = $"Hai, pengguna dengan username {username}";
-            }
         }
 
         private void btnSiswa_Click(object sender, EventArgs e)

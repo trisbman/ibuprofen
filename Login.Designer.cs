@@ -66,6 +66,7 @@ namespace Ibuprofen
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(224, 20);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.Text = "admin";
             // 
             // label3
             // 
@@ -83,6 +84,7 @@ namespace Ibuprofen
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(224, 20);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "1234";
             // 
             // btnLogin
             // 

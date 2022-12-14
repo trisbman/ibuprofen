@@ -198,11 +198,7 @@ namespace Ibuprofen.ModulSiswa
                 {
                     UpdateDataSet();
                     MessageBox.Show("Data telah berhasil diubah!");
-
-                    Dispose();
-                    Close();
-                    ModulEditSiswa modulSiswa = new ModulEditSiswa();
-                    modulSiswa.ShowDialog();
+                    RestartForm();
                 }
                 else
                 {
@@ -403,6 +399,14 @@ namespace Ibuprofen.ModulSiswa
         {
             Hide();
             ModulSiswa modulSiswa = new ModulSiswa();
+            modulSiswa.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void RestartForm()
+        {
+            Hide();
+            ModulEditSiswa modulSiswa = new ModulEditSiswa();
             modulSiswa.ShowDialog();
             Dispose(); Close();
         }

@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -67,12 +68,6 @@
     </Compile>
     <Compile Include="ModulKurikulum\ModulKurikulum.Designer.cs">
       <DependentUpon>ModulKurikulum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModulKurikulum\ModulKurikulumOld.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModulKurikulum\ModulKurikulumOld.Designer.cs">
-      <DependentUpon>ModulKurikulumOld.cs</DependentUpon>
     </Compile>
     <Compile Include="ModulSiswa\ModulAddSiswa.cs">
       <SubType>Form</SubType>
@@ -120,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModulKurikulum\ModulKurikulum.resx">
       <DependentUpon>ModulKurikulum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModulKurikulum\ModulKurikulumOld.resx">
-      <DependentUpon>ModulKurikulumOld.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModulSiswa\ModulAddSiswa.resx">
       <DependentUpon>ModulAddSiswa.cs</DependentUpon>

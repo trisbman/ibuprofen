@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Ibuprofen.Database;
+using Microsoft.VisualBasic;
 
 namespace Ibuprofen.ModulKurikulum
 {
@@ -150,6 +151,72 @@ namespace Ibuprofen.ModulKurikulum
             Login login = new Login();
             login.ShowDialog();
             Dispose(); Close();
+        }
+
+        #region DB Modifier
+        private void AddCourse(string name)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string q = $"INSERT INTO {Table.COURSE}" +
+                    $" (Nama) VALUES ('{name}') ";
+                SqlCommand cmd = new SqlCommand(q, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+        private void DeleteCourse(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string q = $"DELETE FROM {Table.COURSE}" +
+                    $" WHERE ID_Mapel = {id} ";
+                SqlCommand cmd = new SqlCommand(q, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+        }
+        #endregion
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string name = Interaction.InputBox("Masukkan nama mata pelajaran", "Tambah mata pelajaran baru");
+                AddCourse(name);
+                RestartForm();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void RestartForm()
+        {
+            Hide();
+            ModulKurikulum modulKurikulum = new ModulKurikulum();
+            modulKurikulum.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataRowView courseRv = (DataRowView)lstMapel.SelectedItem;
+                int courseId = int.Parse(courseRv["ID_Mapel"].ToString());
+                DeleteCourse(courseId);
+                RestartForm();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }
