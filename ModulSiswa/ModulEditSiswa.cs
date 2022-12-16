@@ -429,18 +429,18 @@ namespace Ibuprofen.ModulSiswa
 
         private void GenerateScoreReport()
         {
-            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
-
-            xlApp.Workbooks.Add();
-            Workbook workBook = xlApp.ActiveWorkbook;            
-            Worksheet workSheet = xlApp.ActiveSheet;
-
             DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
             int studentId = (int)studentRv["ID_Siswa"];
             string ex = $"ID_Siswa = '{studentId}'";
             DataRow[] courseRows = dataSet.Tables[Table.SCORE].Select(ex);
 
             #region Populate sheet
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            xlApp.Workbooks.Add();
+            Workbook workBook = xlApp.ActiveWorkbook;
+            Worksheet workSheet = xlApp.ActiveSheet;
+
             workSheet.Cells[1, "A"] = "Nama"; workSheet.Cells[1, "B"] = studentRv["Nama"];
             workSheet.Cells[2, "A"] = "Tingkat"; workSheet.Cells[2, "B"] = studentRv["Tingkat"];
 
@@ -466,7 +466,13 @@ namespace Ibuprofen.ModulSiswa
 
             workSheet.Range["A" + bodyStartRow, "E" + bodyEndRow].AutoFormat(XlRangeAutoFormat.xlRangeAutoFormatClassic2);
             #endregion            
+
             xlApp.Visible = true;
+        }
+
+        private void btnAbsensi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

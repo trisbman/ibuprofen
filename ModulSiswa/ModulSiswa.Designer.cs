@@ -39,27 +39,30 @@ namespace Ibuprofen.ModulSiswa
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(308, 213);
+            this.label3.Location = new System.Drawing.Point(106, 337);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 31);
+            this.label3.Size = new System.Drawing.Size(198, 48);
             this.label3.TabIndex = 5;
             this.label3.Text = "Tambah Data Siswa";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(540, 213);
+            this.label1.Location = new System.Drawing.Point(462, 337);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 31);
+            this.label1.Size = new System.Drawing.Size(198, 48);
             this.label1.TabIndex = 7;
             this.label1.Text = "Edit Data Siswa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(70, 213);
+            this.label2.Location = new System.Drawing.Point(461, 660);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(132, 31);
+            this.label2.Size = new System.Drawing.Size(198, 48);
             this.label2.TabIndex = 9;
             this.label2.Text = "Kembali ke Menu Utama";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,9 +74,10 @@ namespace Ibuprofen.ModulSiswa
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBack.FlatAppearance.BorderSize = 5;
-            this.btnBack.Location = new System.Drawing.Point(61, 58);
+            this.btnBack.Location = new System.Drawing.Point(448, 421);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(150, 150);
+            this.btnBack.Size = new System.Drawing.Size(225, 231);
             this.btnBack.TabIndex = 8;
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBack.UseVisualStyleBackColor = false;
@@ -83,9 +87,10 @@ namespace Ibuprofen.ModulSiswa
             // 
             this.btnEdit.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEdit.Location = new System.Drawing.Point(531, 58);
+            this.btnEdit.Location = new System.Drawing.Point(448, 98);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(150, 150);
+            this.btnEdit.Size = new System.Drawing.Size(225, 231);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEdit.UseVisualStyleBackColor = true;
@@ -95,9 +100,10 @@ namespace Ibuprofen.ModulSiswa
             // 
             this.btnAdd.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.Location = new System.Drawing.Point(299, 58);
+            this.btnAdd.Location = new System.Drawing.Point(92, 98);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 150);
+            this.btnAdd.Size = new System.Drawing.Size(225, 231);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -105,16 +111,15 @@ namespace Ibuprofen.ModulSiswa
             // 
             // ModulSiswa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 292);
+            this.ClientSize = new System.Drawing.Size(801, 767);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ModulSiswa";
             this.Text = "Menu Peserta Didik";
             this.ResumeLayout(false);
