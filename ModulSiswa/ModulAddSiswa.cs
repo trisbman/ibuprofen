@@ -27,8 +27,8 @@ namespace Ibuprofen.ModulSiswa
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string q = $"INSERT INTO {Table.STUDENT} " +
-                    $" (Nama, ID_Kelas) " +
-                    $" VALUES ('{txtNama.Text}', '{cboKelas.Text}');" +
+                    $" (Nama, Kelas, Tingkat) " +
+                    $" VALUES ('{txtNama.Text}', '{cboKelas.Text}', '{cboTingkat.Text}');" +
                     $" SELECT TOP 1 * FROM {Table.STUDENT} ORDER BY ID_Siswa DESC ";
                 SqlCommand cmd = new SqlCommand(q, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
