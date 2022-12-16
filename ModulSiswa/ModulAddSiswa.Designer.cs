@@ -69,107 +69,121 @@ namespace Ibuprofen.ModulSiswa
             "A",
             "B",
             "C"});
-            this.cboTingkat.Location = new System.Drawing.Point(148, 86);
+            this.cboTingkat.Location = new System.Drawing.Point(222, 132);
+            this.cboTingkat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboTingkat.Name = "cboTingkat";
-            this.cboTingkat.Size = new System.Drawing.Size(183, 21);
+            this.cboTingkat.Size = new System.Drawing.Size(272, 28);
             this.cboTingkat.TabIndex = 28;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(700, 415);
+            this.btnSave.Location = new System.Drawing.Point(1050, 638);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 35);
             this.btnSave.TabIndex = 17;
             this.btnSave.Text = "Simpan";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cboJk
             // 
             this.cboJk.FormattingEnabled = true;
-            this.cboJk.Location = new System.Drawing.Point(147, 83);
+            this.cboJk.Location = new System.Drawing.Point(220, 128);
+            this.cboJk.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboJk.Name = "cboJk";
-            this.cboJk.Size = new System.Drawing.Size(183, 21);
+            this.cboJk.Size = new System.Drawing.Size(272, 28);
             this.cboJk.TabIndex = 29;
             // 
             // txtNotelp
             // 
-            this.txtNotelp.Location = new System.Drawing.Point(147, 208);
+            this.txtNotelp.Location = new System.Drawing.Point(220, 320);
+            this.txtNotelp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNotelp.Name = "txtNotelp";
-            this.txtNotelp.Size = new System.Drawing.Size(183, 20);
+            this.txtNotelp.Size = new System.Drawing.Size(272, 26);
             this.txtNotelp.TabIndex = 24;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 211);
+            this.label9.Location = new System.Drawing.Point(52, 325);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.Size = new System.Drawing.Size(90, 20);
             this.label9.TabIndex = 18;
             this.label9.Text = "No Telepon";
             // 
             // txtKotaLahir
             // 
-            this.txtKotaLahir.Location = new System.Drawing.Point(147, 127);
+            this.txtKotaLahir.Location = new System.Drawing.Point(220, 195);
+            this.txtKotaLahir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtKotaLahir.Name = "txtKotaLahir";
-            this.txtKotaLahir.Size = new System.Drawing.Size(183, 20);
+            this.txtKotaLahir.Size = new System.Drawing.Size(272, 26);
             this.txtKotaLahir.TabIndex = 25;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 130);
+            this.label8.Location = new System.Drawing.Point(52, 200);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 13);
+            this.label8.Size = new System.Drawing.Size(112, 20);
             this.label8.TabIndex = 19;
             this.label8.Text = "Kota Kelahiran";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 89);
+            this.label7.Location = new System.Drawing.Point(54, 137);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.Size = new System.Drawing.Size(61, 20);
             this.label7.TabIndex = 20;
             this.label7.Text = "Tingkat";
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(147, 40);
+            this.txtNama.Location = new System.Drawing.Point(220, 62);
+            this.txtNama.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNama.Name = "txtNama";
-            this.txtNama.Size = new System.Drawing.Size(183, 20);
+            this.txtNama.Size = new System.Drawing.Size(272, 26);
             this.txtNama.TabIndex = 26;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(35, 86);
+            this.label6.Location = new System.Drawing.Point(52, 132);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "Jenis Kelamin";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 43);
+            this.label5.Location = new System.Drawing.Point(52, 66);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 22;
             this.label5.Text = "Nama";
             // 
             // txtNisn
             // 
-            this.txtNisn.Location = new System.Drawing.Point(148, 43);
+            this.txtNisn.Location = new System.Drawing.Point(222, 66);
+            this.txtNisn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNisn.Name = "txtNisn";
-            this.txtNisn.Size = new System.Drawing.Size(183, 20);
+            this.txtNisn.Size = new System.Drawing.Size(272, 26);
             this.txtNisn.TabIndex = 27;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 46);
+            this.label4.Location = new System.Drawing.Point(54, 71);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(47, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "NISN";
             // 
@@ -187,9 +201,11 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtKotaLahir);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Location = new System.Drawing.Point(26, 52);
+            this.groupBox1.Location = new System.Drawing.Point(39, 80);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 349);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(549, 537);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Pribadi";
@@ -197,33 +213,37 @@ namespace Ibuprofen.ModulSiswa
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 171);
+            this.label2.Location = new System.Drawing.Point(52, 263);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.Size = new System.Drawing.Size(105, 20);
             this.label2.TabIndex = 33;
             this.label2.Text = "Tanggal Lahir";
             // 
             // dtpLahir
             // 
-            this.dtpLahir.Location = new System.Drawing.Point(147, 165);
+            this.dtpLahir.Location = new System.Drawing.Point(220, 254);
+            this.dtpLahir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpLahir.Name = "dtpLahir";
-            this.dtpLahir.Size = new System.Drawing.Size(183, 20);
+            this.dtpLahir.Size = new System.Drawing.Size(272, 26);
             this.dtpLahir.TabIndex = 32;
             // 
             // txtAlamat
             // 
-            this.txtAlamat.Location = new System.Drawing.Point(147, 249);
+            this.txtAlamat.Location = new System.Drawing.Point(220, 383);
+            this.txtAlamat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
-            this.txtAlamat.Size = new System.Drawing.Size(183, 71);
+            this.txtAlamat.Size = new System.Drawing.Size(272, 107);
             this.txtAlamat.TabIndex = 31;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 252);
+            this.label1.Location = new System.Drawing.Point(52, 388);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 30;
             this.label1.Text = "Alamat";
             // 
@@ -235,9 +255,11 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox2.Controls.Add(this.cboTingkat);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(399, 52);
+            this.groupBox2.Location = new System.Drawing.Point(598, 80);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(376, 175);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(564, 269);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Akademis";
@@ -249,17 +271,19 @@ namespace Ibuprofen.ModulSiswa
             "A",
             "B",
             "C"});
-            this.cboKelas.Location = new System.Drawing.Point(148, 126);
+            this.cboKelas.Location = new System.Drawing.Point(222, 194);
+            this.cboKelas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboKelas.Name = "cboKelas";
-            this.cboKelas.Size = new System.Drawing.Size(183, 21);
+            this.cboKelas.Size = new System.Drawing.Size(272, 28);
             this.cboKelas.TabIndex = 30;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(36, 129);
+            this.label11.Location = new System.Drawing.Point(54, 198);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.Size = new System.Drawing.Size(48, 20);
             this.label11.TabIndex = 29;
             this.label11.Text = "Kelas";
             // 
@@ -269,9 +293,11 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox3.Controls.Add(this.txtIbu);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtAyah);
-            this.groupBox3.Location = new System.Drawing.Point(398, 242);
+            this.groupBox3.Location = new System.Drawing.Point(597, 372);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(376, 159);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(564, 245);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data Orangtua";
@@ -279,40 +305,45 @@ namespace Ibuprofen.ModulSiswa
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(36, 94);
+            this.label10.Location = new System.Drawing.Point(54, 145);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(53, 13);
+            this.label10.Size = new System.Drawing.Size(78, 20);
             this.label10.TabIndex = 36;
             this.label10.Text = "Nama Ibu";
             // 
             // txtIbu
             // 
-            this.txtIbu.Location = new System.Drawing.Point(148, 91);
+            this.txtIbu.Location = new System.Drawing.Point(222, 140);
+            this.txtIbu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIbu.Name = "txtIbu";
-            this.txtIbu.Size = new System.Drawing.Size(183, 20);
+            this.txtIbu.Size = new System.Drawing.Size(272, 26);
             this.txtIbu.TabIndex = 37;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 53);
+            this.label3.Location = new System.Drawing.Point(54, 82);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 34;
             this.label3.Text = "Nama Ayah";
             // 
             // txtAyah
             // 
-            this.txtAyah.Location = new System.Drawing.Point(148, 50);
+            this.txtAyah.Location = new System.Drawing.Point(222, 77);
+            this.txtAyah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAyah.Name = "txtAyah";
-            this.txtAyah.Size = new System.Drawing.Size(183, 20);
+            this.txtAyah.Size = new System.Drawing.Size(272, 26);
             this.txtAyah.TabIndex = 35;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(699, 12);
+            this.button3.Location = new System.Drawing.Point(1048, 18);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(112, 35);
             this.button3.TabIndex = 33;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = true;
@@ -320,9 +351,10 @@ namespace Ibuprofen.ModulSiswa
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(26, 12);
+            this.button1.Location = new System.Drawing.Point(39, 18);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(112, 35);
             this.button1.TabIndex = 34;
             this.button1.Text = "Kembali";
             this.button1.UseVisualStyleBackColor = true;
@@ -330,15 +362,16 @@ namespace Ibuprofen.ModulSiswa
             // 
             // ModulAddSiswa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnSave);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ModulAddSiswa";
             this.Text = "Menu Tambah Siswa";
             this.groupBox1.ResumeLayout(false);

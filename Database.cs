@@ -4,6 +4,7 @@
     {
         public static class Table
         {
+            public static readonly string LOGIN = "tbl_user";
             public static readonly string STUDENT = "tbl_siswa";
             public static readonly string STUDENT_DATA = "tbl_data_siswa";
             public static readonly string SCORE = "tbl_nilai";

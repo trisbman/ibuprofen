@@ -9,13 +9,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Ibuprofen.Database;
 
 namespace Ibuprofen
 {
     public partial class Login : Form
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
-        private readonly string LOGIN_TABLE = "tbl_user";
 
         public Login()
         {
@@ -25,7 +25,7 @@ namespace Ibuprofen
         private DataRow Authenticate()
         {
             DataSet dataSet = LoadData();
-            return dataSet.Tables[LOGIN_TABLE].Rows.Find(txtUsername.Text);
+            return dataSet.Tables[Table.LOGIN].Rows.Find(txtUsername.Text);
         }
 
         private DataSet LoadData()
@@ -34,15 +34,15 @@ namespace Ibuprofen
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM " + LOGIN_TABLE, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.LOGIN, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, LOGIN_TABLE);
+                adapter.Fill(dataSet, Table.LOGIN);
 
                 var key = new DataColumn[1];
-                key[0] = dataSet.Tables[LOGIN_TABLE].Columns[0];
-                dataSet.Tables[LOGIN_TABLE].PrimaryKey = key;
+                key[0] = dataSet.Tables[Table.LOGIN].Columns[0];
+                dataSet.Tables[Table.LOGIN].PrimaryKey = key;
 
                 connection.Close();
                 return dataSet;
@@ -60,6 +60,8 @@ namespace Ibuprofen
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            Continue();
+            return;
             DataRow result = Authenticate();
             string loginTitle = "Login";
 
