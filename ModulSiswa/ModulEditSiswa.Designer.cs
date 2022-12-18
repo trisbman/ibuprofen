@@ -55,7 +55,7 @@ namespace Ibuprofen.ModulSiswa
             this.nudTugas = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.tabAttendance = new System.Windows.Forms.TabPage();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtKeterangan = new System.Windows.Forms.TextBox();
             this.cboStatus = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -109,7 +109,7 @@ namespace Ibuprofen.ModulSiswa
             this.tabData.Controls.Add(this.label4);
             this.tabData.Location = new System.Drawing.Point(4, 22);
             this.tabData.Name = "tabData";
-            this.tabData.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabData.Padding = new System.Windows.Forms.Padding(3);
             this.tabData.Size = new System.Drawing.Size(476, 322);
             this.tabData.TabIndex = 0;
             this.tabData.Text = "Ubah Data";
@@ -234,7 +234,7 @@ namespace Ibuprofen.ModulSiswa
             this.tabScore.Controls.Add(this.label10);
             this.tabScore.Location = new System.Drawing.Point(4, 22);
             this.tabScore.Name = "tabScore";
-            this.tabScore.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabScore.Padding = new System.Windows.Forms.Padding(3);
             this.tabScore.Size = new System.Drawing.Size(476, 322);
             this.tabScore.TabIndex = 1;
             this.tabScore.Text = "Pengaturan Nilai";
@@ -329,7 +329,7 @@ namespace Ibuprofen.ModulSiswa
             // 
             // tabAttendance
             // 
-            this.tabAttendance.Controls.Add(this.textBox2);
+            this.tabAttendance.Controls.Add(this.txtKeterangan);
             this.tabAttendance.Controls.Add(this.cboStatus);
             this.tabAttendance.Controls.Add(this.label16);
             this.tabAttendance.Controls.Add(this.label17);
@@ -342,13 +342,13 @@ namespace Ibuprofen.ModulSiswa
             this.tabAttendance.Text = "Pengaturan Absensi";
             this.tabAttendance.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtKeterangan
             // 
-            this.textBox2.Location = new System.Drawing.Point(114, 133);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(341, 130);
-            this.textBox2.TabIndex = 3;
+            this.txtKeterangan.Location = new System.Drawing.Point(114, 133);
+            this.txtKeterangan.Multiline = true;
+            this.txtKeterangan.Name = "txtKeterangan";
+            this.txtKeterangan.Size = new System.Drawing.Size(341, 130);
+            this.txtKeterangan.TabIndex = 3;
             // 
             // cboStatus
             // 
@@ -504,7 +504,7 @@ namespace Ibuprofen.ModulSiswa
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // ModulEditSiswa
+            // ModulKurikulum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -514,7 +514,7 @@ namespace Ibuprofen.ModulSiswa
             this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.tabControl1);
-            this.Name = "ModulEditSiswa";
+            this.Name = "ModulKurikulum";
             this.Text = "Pengelolaan Peserta Didik";
             this.Load += new System.EventHandler(this.ModulSiswa_Load);
             this.tabControl1.ResumeLayout(false);
@@ -569,7 +569,7 @@ namespace Ibuprofen.ModulSiswa
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cboMapel;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtKeterangan;
         private System.Windows.Forms.ComboBox cboStatus;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;

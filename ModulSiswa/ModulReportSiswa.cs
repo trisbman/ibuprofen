@@ -26,18 +26,15 @@ namespace Ibuprofen.ModulSiswa
         {
             InitializeComponent();
         }
-        private void btnScoreReport_Click(object sender, EventArgs e)
+
+        private void ModulReportSiswa_Load(object sender, EventArgs e)
         {
-            try
-            {
-                GenerateScoreReport();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.StackTrace);
-                Console.WriteLine(ex.Message);
-            }
+            LoadData();
+
+            // preselect
+            cboKelasFilter.SelectedIndex = 0;
         }
+
         private void LoadData()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -91,6 +88,10 @@ namespace Ibuprofen.ModulSiswa
             DataColumn[] courseKey = new DataColumn[1];
             courseKey[0] = dataSet.Tables[Table.COURSE].Columns["ID_Mapel"];
             dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
+
+            dataSet.Relations.Clear();
+            dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0], false);
+            dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0], false);
             #endregion
 
             cboTingkatFilter.DataSource = dsView;
@@ -98,8 +99,77 @@ namespace Ibuprofen.ModulSiswa
             cboTingkatFilter.ValueMember = Table.GRADE + ".tingkat";
         }
 
+        private void cboTingkat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                cboKelasFilter.Items.Clear();
+                lstSiswa.Items.Clear();
+
+                DataRowView v = (DataRowView)cboTingkatFilter.SelectedItem;
+                int count = (int)v.Row.ItemArray[1];
+
+                for (int i = 0; i < count; i++)
+                {
+                    cboKelasFilter.Items.Add(alpha[i]);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private void cboKelas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string c = cboKelasFilter.Text;
+                string grade = cboTingkatFilter.Text;
+
+                object[] values = new object[2] { grade, c };
+                string ex = $"Tingkat = '{grade}' AND Kelas = '{c}'";
+
+                DataRow[] rows = dataSet.Tables[Table.STUDENT].Select(ex);
+                System.Data.DataTable dataTable = dataSet.Tables[Table.STUDENT].Clone();
+
+                foreach (DataRow row in rows)
+                {
+                    dataTable.ImportRow(row);
+                }
+                DataView dv = dataTable.DefaultView;
+
+                lstSiswa.DataSource = dv;
+                lstSiswa.DisplayMember = "Nama";
+                lstSiswa.ValueMember = "ID_Siswa";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void btnScoreReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Guard();
+                GenerateScoreReport();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
+        }
+
         private void GenerateScoreReport()
         {
+            if(lstSiswa.SelectedItem == null)
+            {
+                return;
+            }
             DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
             int studentId = (int)studentRv["ID_Siswa"];
             string ex = $"ID_Siswa = '{studentId}'";
@@ -143,7 +213,16 @@ namespace Ibuprofen.ModulSiswa
 
         private void btnAbsensi_Click(object sender, EventArgs e)
         {
-            GenerateAttendanceReport();
+            try
+            {
+                Guard();
+                GenerateAttendanceReport();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.StackTrace);
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void GenerateAttendanceReport()
@@ -151,9 +230,33 @@ namespace Ibuprofen.ModulSiswa
 
         }
 
-        private void ModulReportSiswa_Load(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
-            LoadData();
+            Logout();
+        }
+
+        private void Logout()
+        {
+            Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ModulSiswa modulSiswa = new ModulSiswa();
+            modulSiswa.ShowDialog();
+            Dispose(); Close();
+        }
+
+        private void Guard()
+        {
+            if (lstSiswa.SelectedItem == null)
+            {
+                MessageBox.Show("Pilih Siswa terlebih dahulu");
+            }
         }
     }
 }

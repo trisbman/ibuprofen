@@ -35,6 +35,9 @@ namespace Ibuprofen.ModulSiswa
         private void ModulSiswa_Load(object sender, EventArgs e)
         {
             LoadData();
+
+            // preselect
+            cboKelasFilter.SelectedIndex = 0;
         }
 
         private void LoadData()
@@ -63,6 +66,10 @@ namespace Ibuprofen.ModulSiswa
                 command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
                 adapter = new SqlDataAdapter(command);
                 adapter.Fill(dataSet, Table.COURSE);
+
+                command = new SqlCommand("SELECT * FROM " + Table.ATTENDANCE, connection);
+                adapter = new SqlDataAdapter(command);
+                adapter.Fill(dataSet, Table.ATTENDANCE);
                 #endregion
 
                 connection.Close();
@@ -91,6 +98,10 @@ namespace Ibuprofen.ModulSiswa
             courseKey[0] = dataSet.Tables[Table.COURSE].Columns["ID_Mapel"];
             dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
 
+            DataColumn[] attendanceKey = new DataColumn[1];
+            attendanceKey[0] = dataSet.Tables[Table.ATTENDANCE].Columns["ID_Absensi"];
+            dataSet.Tables[Table.ATTENDANCE].PrimaryKey = attendanceKey;
+
             dataSet.Relations.Clear();
             dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0], false);
             dataSet.Relations.Add(Relation.STUDENT_SCORE, studentKey[0], scoreKey[0], false);
@@ -103,6 +114,10 @@ namespace Ibuprofen.ModulSiswa
             cboMapel.DataSource = dsView;
             cboMapel.DisplayMember = Table.COURSE + ".Nama";
             cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
+
+            cboStatus.DataSource = Kehadiran.Data;
+            cboStatus.DisplayMember = "Nama";
+            cboStatus.ValueMember = "Id";
         }
 
         private void cboTingkat_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,16 +126,17 @@ namespace Ibuprofen.ModulSiswa
             {
                 cboKelasFilter.Items.Clear();
                 cboKelas.Items.Clear();
-                lstSiswa.Items.Clear();
 
                 DataRowView v = (DataRowView)cboTingkatFilter.SelectedItem;
-                int count = (int)v.Row.ItemArray[1];
+                int count = (int)v.Row["jumlah_kelas"];
 
                 for (int i = 0; i < count; i++)
                 {
                     cboKelasFilter.Items.Add(alpha[i]);
                     cboKelas.Items.Add(alpha[i]);
                 }
+
+                FilterStudent();
             }
             catch (Exception ex)
             {
@@ -133,30 +149,34 @@ namespace Ibuprofen.ModulSiswa
         {
             try
             {
-                string c = cboKelasFilter.Text;
-                string grade = cboTingkatFilter.Text;
-
-                object[] values = new object[2] { grade, c };
-                string ex = $"Tingkat = '{grade}' AND Kelas = '{c}'";
-
-                DataRow[] rows = dataSet.Tables[Table.STUDENT].Select(ex);
-                DataTable dataTable = dataSet.Tables[Table.STUDENT].Clone();
-
-                foreach (DataRow row in rows)
-                {
-                    dataTable.ImportRow(row);
-                }
-                DataView dv = dataTable.DefaultView;
-
-                lstSiswa.DataSource = dv;
-                lstSiswa.DisplayMember = "Nama";
-                lstSiswa.ValueMember = "ID_Siswa";
+                FilterStudent();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.StackTrace);
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void FilterStudent()
+        {
+            string c = cboKelasFilter.Text;
+            string grade = cboTingkatFilter.Text;
+
+            string ex = $"Tingkat = '{grade}' AND Kelas = '{c}'";
+
+            DataRow[] rows = dataSet.Tables[Table.STUDENT].Select(ex);
+            DataTable dataTable = dataSet.Tables[Table.STUDENT].Clone();
+
+            foreach (DataRow row in rows)
+            {
+                dataTable.ImportRow(row);
+            }
+            DataView dv = dataTable.DefaultView;
+
+            lstSiswa.DataSource = dv;
+            lstSiswa.DisplayMember = "Nama";
+            lstSiswa.ValueMember = "ID_Siswa";
         }
 
         private void lstSiswa_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,6 +260,10 @@ namespace Ibuprofen.ModulSiswa
                     #region Tab 2
                     DisplaySecondTabData();
                     #endregion
+
+                    #region Tab 3
+                    DisplayThirdTabData();
+                    #endregion
                 }
                 else
                 {
@@ -306,7 +330,35 @@ namespace Ibuprofen.ModulSiswa
                 UpdateStudent(connection);
                 UpdateStudentData(connection);
                 UpdateScores(connection);
+                UpdateAttendance(connection);
                 connection.Close();
+            }
+        }
+
+        private void UpdateAttendance(SqlConnection connection)
+        {
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            string studentId = studentRv["ID_Siswa"].ToString();
+
+            string date = $"{dtpAbsensi.Value:yyyy-MM-dd}";
+
+            string q = $"UPDATE {Table.ATTENDANCE}" +
+                $" SET Kehadiran='{cboStatus.SelectedValue}', " +
+                $" Keterangan='{txtKeterangan.Text}' " +
+                $" WHERE ID_Siswa='{studentId}' AND Tanggal='{date}'";
+            using (SqlCommand cmd = new SqlCommand(q, connection))
+            {
+                int result = cmd.ExecuteNonQuery();
+                if (result == 0)
+                {
+                    q = $"INSERT INTO {Table.ATTENDANCE}" +
+                        $" (ID_Siswa, Tanggal, Kehadiran, Keterangan) " +
+                        $" VALUES ('{studentId}', '{date}', " +
+                        $" '{cboStatus.SelectedValue}', '{txtKeterangan.Text}') ";
+
+                    cmd.CommandText = q;
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
@@ -395,7 +447,31 @@ namespace Ibuprofen.ModulSiswa
 
         private void dtpAbsensi_ValueChanged(object sender, EventArgs e)
         {
+            DisplayThirdTabData();
+        }
 
+        private void DisplayThirdTabData()
+        {
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            string studentId = studentRv["ID_Siswa"].ToString();
+
+            string ex = $"Tanggal='{dtpAbsensi.Value:yyyy-MM-dd}' AND ID_Siswa='{studentId}'";
+            DataRow[] rows = dataSet.Tables[Table.ATTENDANCE].Select(ex);
+            if (rows.Length > 0)
+            {
+                DataRow row = rows[0];
+                int attendanceId = int.Parse(row["Kehadiran"].ToString());
+                cboStatus.SelectedValue = attendanceId;
+                if (attendanceId == 3)
+                {
+                    txtKeterangan.Text = row["Keterangan"].ToString();
+                }
+            }
+            else
+            {
+                cboStatus.SelectedValue = 1;
+                txtKeterangan.Text = null;
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)

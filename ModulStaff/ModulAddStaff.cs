@@ -82,7 +82,7 @@ namespace Ibuprofen.ModulStaff
                 DataRow row = dataTable.Rows[0];
 
                 int staffId = row.Field<int>("ID_Staff");
-                string ttl = $"{txtKotaLahir.Text}, {dtpLahir.Value:yyyy-mm-dd}";
+                string ttl = $"{txtKotaLahir.Text}, {dtpLahir.Value:yyyy-MM-dd}";
                 q = $"INSERT INTO {Table.STAFF_DATA} " +
                     $" (ID_Staff, TTL, Jenis_Kelamin," +
                     $" No_Telepon, Alamat, Universitas, Pendidikan, Gaji) " +

@@ -51,6 +51,7 @@ namespace Ibuprofen.ModulSiswa
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Kembali";
             this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // groupBox2
             // 
@@ -86,6 +87,7 @@ namespace Ibuprofen.ModulSiswa
             this.cboTingkatFilter.Name = "cboTingkatFilter";
             this.cboTingkatFilter.Size = new System.Drawing.Size(217, 21);
             this.cboTingkatFilter.TabIndex = 0;
+            this.cboTingkatFilter.SelectedIndexChanged += new System.EventHandler(this.cboTingkat_SelectedIndexChanged);
             // 
             // cboKelasFilter
             // 
@@ -98,6 +100,7 @@ namespace Ibuprofen.ModulSiswa
             this.cboKelasFilter.Name = "cboKelasFilter";
             this.cboKelasFilter.Size = new System.Drawing.Size(217, 21);
             this.cboKelasFilter.TabIndex = 0;
+            this.cboKelasFilter.SelectedIndexChanged += new System.EventHandler(this.cboKelas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -134,6 +137,7 @@ namespace Ibuprofen.ModulSiswa
             this.btnLogout.TabIndex = 10;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnAbsensi
             // 
