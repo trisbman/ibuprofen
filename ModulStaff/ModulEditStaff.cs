@@ -139,7 +139,7 @@ namespace Ibuprofen.ModulStaff
 
                 Dispose();
                 Close();
-                ModulEditSiswa modulSiswa = new ModulEditSiswa();
+                ModulSiswa.ModulKurikulum modulSiswa = new ModulSiswa.ModulKurikulum();
                 modulSiswa.ShowDialog();
             }
             catch (Exception ex)

@@ -28,7 +28,7 @@ namespace Ibuprofen.ModulSiswa
         private void btnEdit_Click(object sender, EventArgs e)
         {
             Hide();
-            ModulEditSiswa modulEditSiswa = new ModulEditSiswa();
+            ModulKurikulum modulEditSiswa = new ModulKurikulum();
             modulEditSiswa.ShowDialog();
             Dispose(); Close();
         }

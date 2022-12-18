@@ -1,7 +1,7 @@
 ﻿
 namespace Ibuprofen.ModulSiswa
 {
-    partial class ModulEditSiswa
+    partial class ModulKurikulum
     {
         /// <summary>
         /// Required designer variable.

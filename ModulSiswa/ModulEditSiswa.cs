@@ -16,7 +16,7 @@ using DataTable = System.Data.DataTable;
 
 namespace Ibuprofen.ModulSiswa
 {
-    public partial class ModulEditSiswa : Form
+    public partial class ModulKurikulum : Form
     {
         readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
         readonly DataSet dataSet = new DataSet();
@@ -27,7 +27,7 @@ namespace Ibuprofen.ModulSiswa
 
         bool UnsavedChanges = false;
 
-        public ModulEditSiswa()
+        public ModulKurikulum()
         {
             InitializeComponent();
         }
@@ -409,7 +409,7 @@ namespace Ibuprofen.ModulSiswa
         private void RestartForm()
         {
             Hide();
-            ModulEditSiswa modulSiswa = new ModulEditSiswa();
+            ModulKurikulum modulSiswa = new ModulKurikulum();
             modulSiswa.ShowDialog();
             Dispose(); Close();
         }

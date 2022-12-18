@@ -75,16 +75,20 @@ namespace Ibuprofen.ModulKurikulum
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                UpdateStaff(connection);
+                UpdateCourse(connection);
                 connection.Close();
             }
         }
-        private void UpdateStaff(SqlConnection connection)
+        private void UpdateCourse(SqlConnection connection)
         {
             DataRowView courseRv = (DataRowView)lstMapel.SelectedItem;
             int courseId = int.Parse(courseRv["ID_Mapel"].ToString());
             string q = $"UPDATE {Table.COURSE}" +
-                $" SET Nama='{txtNama.Text}'" +
+                $" SET Nama='{txtNama.Text}'," +
+                $" KKM_Tugas='{nudTugas.Value}'," +
+                $" KKM_Tugas_Tambahan='{nudTugasP.Value}'," +
+                $" KKM_Ujian='{nudUjian.Value}'," +
+                $" KKM_Remedial='{nudRemedial.Value}' " +
                 $" WHERE ID_Mapel='{courseId}'";
             using (SqlCommand cmd = new SqlCommand(q, connection))
             {
@@ -99,11 +103,7 @@ namespace Ibuprofen.ModulKurikulum
             {
                 UpdateDataSet();
                 MessageBox.Show("Data telah berhasil diubah!");
-
-                Dispose();
-                Close();
-                ModulEditSiswa modulSiswa = new ModulEditSiswa();
-                modulSiswa.ShowDialog();
+                RestartForm();
             }
             catch (Exception ex)
             {
