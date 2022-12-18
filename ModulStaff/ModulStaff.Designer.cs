@@ -39,7 +39,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(536, 211);
+            this.label1.Location = new System.Drawing.Point(318, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(132, 31);
             this.label1.TabIndex = 11;
@@ -48,7 +48,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(301, 211);
+            this.label3.Location = new System.Drawing.Point(83, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 31);
             this.label3.TabIndex = 9;
@@ -59,7 +59,7 @@ namespace Ibuprofen.ModulStaff
             // 
             this.btnEdit.BackgroundImage = global::Ibuprofen.Properties.Resources.edit_table;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEdit.Location = new System.Drawing.Point(527, 56);
+            this.btnEdit.Location = new System.Drawing.Point(309, 54);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(150, 150);
             this.btnEdit.TabIndex = 10;
@@ -71,7 +71,7 @@ namespace Ibuprofen.ModulStaff
             // 
             this.btnAdd.BackgroundImage = global::Ibuprofen.Properties.Resources._new;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.Location = new System.Drawing.Point(292, 56);
+            this.btnAdd.Location = new System.Drawing.Point(74, 54);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(150, 150);
             this.btnAdd.TabIndex = 8;
@@ -81,7 +81,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(69, 211);
+            this.label2.Location = new System.Drawing.Point(547, 209);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 31);
             this.label2.TabIndex = 13;
@@ -95,7 +95,7 @@ namespace Ibuprofen.ModulStaff
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnBack.FlatAppearance.BorderSize = 5;
-            this.btnBack.Location = new System.Drawing.Point(60, 56);
+            this.btnBack.Location = new System.Drawing.Point(538, 54);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(150, 150);
             this.btnBack.TabIndex = 12;

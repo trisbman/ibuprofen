@@ -40,5 +40,13 @@ namespace Ibuprofen.ModulSiswa
             mainMenu.ShowDialog();
             Dispose(); Close();
         }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Hide();
+            ModulReportSiswa modulReportSiswa = new ModulReportSiswa();
+            modulReportSiswa.ShowDialog();
+            Dispose(); Close();
+        }
     }
 }

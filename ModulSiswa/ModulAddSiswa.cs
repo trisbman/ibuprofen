@@ -26,6 +26,7 @@ namespace Ibuprofen.ModulSiswa
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
+                connection.Open();
                 string q = $"INSERT INTO {Table.STUDENT} " +
                     $" (Nama, Kelas, Tingkat) " +
                     $" VALUES ('{txtNama.Text}', '{cboKelas.Text}', '{cboTingkat.Text}');" +
@@ -47,6 +48,7 @@ namespace Ibuprofen.ModulSiswa
 
                 cmd.CommandText = q;
                 cmd.ExecuteNonQuery();
+                connection.Close();
             }
         }
 

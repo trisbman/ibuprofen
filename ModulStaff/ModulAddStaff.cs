@@ -16,10 +16,35 @@ namespace Ibuprofen.ModulStaff
     public partial class ModulAddStaff : Form
     {
         private readonly string connectionString = ConfigurationManager.ConnectionStrings[0].ConnectionString;
-        
+        readonly DataSet dataSet = new DataSet();
+        DataViewManager dsView;
+
         public ModulAddStaff()
         {
             InitializeComponent();
+        }
+
+        private void ModulAddStaff_Load(object sender, EventArgs e)
+        {
+            cboJk.DataSource = JenisKelamin.Data;
+            cboJk.DisplayMember = "Nama";
+            cboJk.ValueMember = "Id";
+
+            cboTingkat.DataSource = Pendidikan.Data;
+            cboTingkat.DisplayMember = "Nama";
+            cboTingkat.ValueMember = "Id";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                adapter.Fill(dataSet, Table.COURSE);
+            }
+            dsView = dataSet.DefaultViewManager;
+
+            cboMapel.DataSource = dsView;
+            cboMapel.DisplayMember = Table.COURSE + ".Nama";
+            cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -38,17 +63,26 @@ namespace Ibuprofen.ModulStaff
             Dispose(); Close();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void AddStaff()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                int isGuru = int.Parse(rdoGuruY.Checked.ToString());
-                int courseId = 1;
+                connection.Open();
+                bool isGuru = rdoGuruY.Checked;
 
                 string q = $"INSERT INTO {Table.STAFF} " +
                 $" (Nama, IS_Guru, ID_Mapel) " +
-                $" VALUES ('{txtNama.Text}', '{isGuru}', '{courseId}');" +
-                $" SELECT TOP 1 * FROM {Table.STAFF} ORDER BY ID_Staff DESC ";
+                $" VALUES ('{txtNama.Text}', '{isGuru}'";
+                if (isGuru)
+                {
+                    q += $", '{cboMapel.SelectedValue}');";
+                }
+                else
+                {
+                    q += ");";
+                }
+                q += $" SELECT TOP 1 * FROM {Table.STAFF} ORDER BY ID_Staff DESC ";
+
                 SqlCommand cmd = new SqlCommand(q, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -56,17 +90,34 @@ namespace Ibuprofen.ModulStaff
                 DataRow row = dataTable.Rows[0];
 
                 int staffId = row.Field<int>("ID_Staff");
+                string ttl = $"{txtKotaLahir.Text}, {dtpLahir.Value:yyyy-mm-dd}";
                 q = $"INSERT INTO {Table.STAFF_DATA} " +
-                    $" (Kota_Lahir, Tanggal_Lahir, Jenis_Kelamin, No_Telp, " +
-                    $" Alamat, Pendidikan, Universitas, Gaji) " +
+                    $" (ID_Staff, TTL, Jenis_Kelamin," +
+                    $" No_Telepon, Alamat, Universitas, Pendidikan, Gaji) " +
                     $" VALUES" +
-                    $" ('{txtKotaLahir.Text}', '{dtpLahir.Value}', '{cboJk.Text}'," +
-                    $" '{txtNotelp.Text}', '{txtAlamat.Text}', '{cboTingkat.Text}'," +
-                    $" '{nudGaji.Value}') ";
+                    $" ('{staffId}', '{ttl}', '{cboJk.SelectedValue}'," +
+                    $" '{txtNotelp.Text}', '{txtAlamat.Text}', " +
+                    $" '{txtUniv.Text}', '{cboTingkat.SelectedValue}', '{nudGaji.Value}') ";
 
                 cmd.CommandText = q;
                 cmd.ExecuteNonQuery();
+                connection.Close();
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            AddStaff();
+            MessageBox.Show("Staff berhasil ditambahkan");
+            BackToMainMenu();
+        }
+
+        private void BackToMainMenu()
+        {
+            Hide();
+            MainMenu menu = new MainMenu();
+            menu.ShowDialog();
+            Dispose(); Close();
         }
     }
 }
