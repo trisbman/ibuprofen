@@ -33,6 +33,12 @@ namespace Ibuprofen.ModulSiswa
 
             // preselect
             cboKelasFilter.SelectedIndex = 0;
+            DateTime dateTime = DateTime.Today;
+            dateTimePicker2.Value = dateTime;
+            dateTimePicker1.Value = new DateTime(dateTime.Year, dateTime.Month, 1);
+
+            // validation
+            dateTimePicker2.MaxDate = dateTime;
         }
 
         private void LoadData()
@@ -61,6 +67,10 @@ namespace Ibuprofen.ModulSiswa
                 command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
                 adapter = new SqlDataAdapter(command);
                 adapter.Fill(dataSet, Table.COURSE);
+
+                command = new SqlCommand("SELECT * FROM " + Table.ATTENDANCE, connection);
+                adapter = new SqlDataAdapter(command);
+                adapter.Fill(dataSet, Table.ATTENDANCE);
                 #endregion
 
                 connection.Close();
@@ -88,6 +98,10 @@ namespace Ibuprofen.ModulSiswa
             DataColumn[] courseKey = new DataColumn[1];
             courseKey[0] = dataSet.Tables[Table.COURSE].Columns["ID_Mapel"];
             dataSet.Tables[Table.COURSE].PrimaryKey = courseKey;
+
+            DataColumn[] attendanceKey = new DataColumn[1];
+            attendanceKey[0] = dataSet.Tables[Table.ATTENDANCE].Columns["ID_Absensi"];
+            dataSet.Tables[Table.ATTENDANCE].PrimaryKey = attendanceKey;
 
             dataSet.Relations.Clear();
             dataSet.Relations.Add(Relation.STUDENT_DATA, studentKey[0], dataKey[0], false);
@@ -166,7 +180,7 @@ namespace Ibuprofen.ModulSiswa
 
         private void GenerateScoreReport()
         {
-            if(lstSiswa.SelectedItem == null)
+            if (lstSiswa.SelectedItem == null)
             {
                 return;
             }
@@ -188,10 +202,24 @@ namespace Ibuprofen.ModulSiswa
             var bodyStartRow = 3;
             workSheet.Cells[bodyStartRow, "A"] = "Mata Pelajaran";
             workSheet.Cells[bodyStartRow, "B"] = "Nilai";
-            workSheet.Cells[bodyStartRow + 1, "B"] = "Tugas";
-            workSheet.Cells[bodyStartRow + 1, "C"] = "Tugas Tambahan";
-            workSheet.Cells[bodyStartRow + 1, "D"] = "Ujian";
-            workSheet.Cells[bodyStartRow + 1, "E"] = "Remedial";
+
+            int charIndex = 0;
+            if (chkTugas.Checked)
+            {
+                workSheet.Cells[bodyStartRow + 1, alpha[++charIndex].ToString()] = "Tugas";
+            }
+            if (chkTugasP.Checked)
+            {
+                workSheet.Cells[bodyStartRow + 1, alpha[++charIndex].ToString()] = "Tugas Tambahan";
+            }
+            if (chkUjian.Checked)
+            {
+                workSheet.Cells[bodyStartRow + 1, alpha[++charIndex].ToString()] = "Ujian";
+            }
+            if (chkRemedial.Checked)
+            {
+                workSheet.Cells[bodyStartRow + 1, alpha[++charIndex].ToString()] = "Remedial";
+            }
             var bodyEndRow = bodyStartRow + 1;
             foreach (DataRow courseRow in courseRows)
             {
@@ -199,13 +227,27 @@ namespace Ibuprofen.ModulSiswa
                 int courseId = (int)courseRow["ID_Mapel"];
                 string courseName = (string)dsView.DataSet.Tables[Table.COURSE].Rows.Find(courseId)["Nama"];
                 workSheet.Cells[bodyEndRow, "A"] = courseName;
-                workSheet.Cells[bodyEndRow, "B"] = courseRow["Tugas"];
-                workSheet.Cells[bodyEndRow, "C"] = courseRow["Tugas_Tambahan"];
-                workSheet.Cells[bodyEndRow, "D"] = courseRow["Ujian"];
-                workSheet.Cells[bodyEndRow, "E"] = courseRow["Remedial"];
+
+                int ci = 0;
+                if (chkTugas.Checked)
+                {
+                    workSheet.Cells[bodyEndRow, alpha[++ci].ToString()] = courseRow["Tugas"];
+                }
+                if (chkTugasP.Checked)
+                {
+                    workSheet.Cells[bodyEndRow, alpha[++ci].ToString()] = courseRow["Tugas_Tambahan"];
+                }
+                if (chkUjian.Checked)
+                {
+                    workSheet.Cells[bodyEndRow, alpha[++ci].ToString()] = courseRow["Ujian"];
+                }
+                if (chkRemedial.Checked)
+                {
+                    workSheet.Cells[bodyEndRow, alpha[++ci].ToString()] = courseRow["Remedial"];
+                }
             }
 
-            workSheet.Range["A" + bodyStartRow, "E" + bodyEndRow].AutoFormat(XlRangeAutoFormat.xlRangeAutoFormatClassic2);
+            workSheet.Range["A" + bodyStartRow, alpha[charIndex].ToString() + bodyEndRow].AutoFormat(XlRangeAutoFormat.xlRangeAutoFormatClassic2);
             #endregion            
 
             xlApp.Visible = true;
@@ -227,6 +269,65 @@ namespace Ibuprofen.ModulSiswa
 
         private void GenerateAttendanceReport()
         {
+            if (lstSiswa.SelectedItem == null)
+            {
+                return;
+            }
+            DataRowView studentRv = (DataRowView)lstSiswa.SelectedItem;
+            int studentId = (int)studentRv["ID_Siswa"];
+            string ex = $"ID_Siswa = '{studentId}'";
+            DataRow[] attendanceRows = dataSet.Tables[Table.ATTENDANCE].Select(ex);
+
+            #region Populate sheet
+            Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+
+            xlApp.Workbooks.Add();
+            Workbook workBook = xlApp.ActiveWorkbook;
+            Worksheet workSheet = xlApp.ActiveSheet;
+
+            workSheet.Cells[1, "A"] = "Nama"; workSheet.Cells[1, "B"] = studentRv["Nama"];
+            workSheet.Cells[2, "A"] = "Tingkat"; workSheet.Cells[2, "B"] = studentRv["Tingkat"];
+
+            var bodyStartRow = 3;
+            workSheet.Cells[bodyStartRow, "A"] = "Tanggal";
+            workSheet.Cells[bodyStartRow, "B"] = "Kehadiran";
+            workSheet.Cells[bodyStartRow, "C"] = "Keterangan";
+            var bodyEndRow = bodyStartRow;
+
+            int diff = (dateTimePicker2.Value - dateTimePicker1.Value).Days + 1;
+            for (int i = 0; i < diff; i++)
+            {
+                bodyEndRow++;
+
+                DateTime idate = dateTimePicker1.Value.AddDays(i);
+                workSheet.Cells[bodyEndRow, "A"] = idate.Date;
+                string attendance = "Libur";
+                if (idate.DayOfWeek != DayOfWeek.Sunday && idate.DayOfWeek != DayOfWeek.Saturday)
+                {
+                    int attendanceId = 1;
+                    DataRow row = attendanceRows.Where(r => (
+                    (DateTime)r["Tanggal"]).ToString("yyyy-MM-dd") == idate.ToString("yyyy-MM-dd")
+                    ).FirstOrDefault();
+
+                    if (row != null)
+                    {
+                        int id = (int)row["ID_Absensi"];
+                        DateTime date = (DateTime)dsView.DataSet.Tables[Table.ATTENDANCE].Rows.Find(id)["Tanggal"];
+                        attendanceId = int.Parse(row["Kehadiran"].ToString());
+
+                        string note = row["Keterangan"].ToString();
+                        workSheet.Cells[bodyEndRow, "C"] = note;
+                    }
+                    attendance = Kehadiran.Data.Where(k => k.Id == attendanceId).FirstOrDefault().Nama;
+                }
+
+                workSheet.Cells[bodyEndRow, "B"] = attendance;
+            }
+
+            workSheet.Range["A" + bodyStartRow, "C" + bodyEndRow].AutoFormat(XlRangeAutoFormat.xlRangeAutoFormatClassic2);
+            #endregion            
+
+            xlApp.Visible = true;
 
         }
 
@@ -257,6 +358,18 @@ namespace Ibuprofen.ModulSiswa
             {
                 MessageBox.Show("Pilih Siswa terlebih dahulu");
             }
+        }
+
+        private void btnKehadiran_Click(object sender, EventArgs e)
+        {
+            Guard();
+            GenerateAttendanceReport();
+        }
+
+        private void btnNilai_Click(object sender, EventArgs e)
+        {
+            Guard();
+            GenerateScoreReport();
         }
     }
 }

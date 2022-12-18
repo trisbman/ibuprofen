@@ -49,15 +49,6 @@ namespace Ibuprofen.ModulKurikulum
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.nudTugas = new System.Windows.Forms.NumericUpDown();
-            this.tabAttendance = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chk12 = new System.Windows.Forms.CheckBox();
-            this.chk11 = new System.Windows.Forms.CheckBox();
-            this.chk10 = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.chk9 = new System.Windows.Forms.CheckBox();
-            this.chk8 = new System.Windows.Forms.CheckBox();
-            this.chk7 = new System.Windows.Forms.CheckBox();
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
@@ -68,9 +59,6 @@ namespace Ibuprofen.ModulKurikulum
             ((System.ComponentModel.ISupportInitialize)(this.nudUjian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTugasP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTugas)).BeginInit();
-            this.tabAttendance.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -128,7 +116,6 @@ namespace Ibuprofen.ModulKurikulum
             // 
             this.tabControl1.Controls.Add(this.tabData);
             this.tabControl1.Controls.Add(this.tabScore);
-            this.tabControl1.Controls.Add(this.tabAttendance);
             this.tabControl1.Location = new System.Drawing.Point(304, 43);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -264,101 +251,6 @@ namespace Ibuprofen.ModulKurikulum
             this.nudTugas.Size = new System.Drawing.Size(216, 20);
             this.nudTugas.TabIndex = 1;
             // 
-            // tabAttendance
-            // 
-            this.tabAttendance.Controls.Add(this.groupBox3);
-            this.tabAttendance.Controls.Add(this.groupBox1);
-            this.tabAttendance.Location = new System.Drawing.Point(4, 22);
-            this.tabAttendance.Name = "tabAttendance";
-            this.tabAttendance.Size = new System.Drawing.Size(476, 337);
-            this.tabAttendance.TabIndex = 2;
-            this.tabAttendance.Text = "Pengaturan Kelas";
-            this.tabAttendance.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.chk12);
-            this.groupBox3.Controls.Add(this.chk11);
-            this.groupBox3.Controls.Add(this.chk10);
-            this.groupBox3.Location = new System.Drawing.Point(3, 95);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(470, 86);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "SMA";
-            // 
-            // chk12
-            // 
-            this.chk12.AutoSize = true;
-            this.chk12.Location = new System.Drawing.Point(359, 38);
-            this.chk12.Name = "chk12";
-            this.chk12.Size = new System.Drawing.Size(39, 17);
-            this.chk12.TabIndex = 0;
-            this.chk12.Text = "XII";
-            this.chk12.UseVisualStyleBackColor = true;
-            // 
-            // chk11
-            // 
-            this.chk11.AutoSize = true;
-            this.chk11.Location = new System.Drawing.Point(202, 38);
-            this.chk11.Name = "chk11";
-            this.chk11.Size = new System.Drawing.Size(36, 17);
-            this.chk11.TabIndex = 0;
-            this.chk11.Text = "XI";
-            this.chk11.UseVisualStyleBackColor = true;
-            // 
-            // chk10
-            // 
-            this.chk10.AutoSize = true;
-            this.chk10.Location = new System.Drawing.Point(54, 38);
-            this.chk10.Name = "chk10";
-            this.chk10.Size = new System.Drawing.Size(33, 17);
-            this.chk10.TabIndex = 0;
-            this.chk10.Text = "X";
-            this.chk10.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.chk9);
-            this.groupBox1.Controls.Add(this.chk8);
-            this.groupBox1.Controls.Add(this.chk7);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(470, 86);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "SMP";
-            // 
-            // chk9
-            // 
-            this.chk9.AutoSize = true;
-            this.chk9.Location = new System.Drawing.Point(359, 38);
-            this.chk9.Name = "chk9";
-            this.chk9.Size = new System.Drawing.Size(36, 17);
-            this.chk9.TabIndex = 0;
-            this.chk9.Text = "IX";
-            this.chk9.UseVisualStyleBackColor = true;
-            // 
-            // chk8
-            // 
-            this.chk8.AutoSize = true;
-            this.chk8.Location = new System.Drawing.Point(202, 38);
-            this.chk8.Name = "chk8";
-            this.chk8.Size = new System.Drawing.Size(42, 17);
-            this.chk8.TabIndex = 0;
-            this.chk8.Text = "VIII";
-            this.chk8.UseVisualStyleBackColor = true;
-            // 
-            // chk7
-            // 
-            this.chk7.AutoSize = true;
-            this.chk7.Location = new System.Drawing.Point(54, 38);
-            this.chk7.Name = "chk7";
-            this.chk7.Size = new System.Drawing.Size(39, 17);
-            this.chk7.TabIndex = 0;
-            this.chk7.Text = "VII";
-            this.chk7.UseVisualStyleBackColor = true;
-            // 
             // btnUbah
             // 
             this.btnUbah.Location = new System.Drawing.Point(709, 415);
@@ -402,11 +294,6 @@ namespace Ibuprofen.ModulKurikulum
             ((System.ComponentModel.ISupportInitialize)(this.nudUjian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTugasP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudTugas)).EndInit();
-            this.tabAttendance.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -423,15 +310,6 @@ namespace Ibuprofen.ModulKurikulum
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabPage tabAttendance;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox chk12;
-        private System.Windows.Forms.CheckBox chk11;
-        private System.Windows.Forms.CheckBox chk10;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox chk9;
-        private System.Windows.Forms.CheckBox chk8;
-        private System.Windows.Forms.CheckBox chk7;
         private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.TabPage tabScore;
         private System.Windows.Forms.NumericUpDown nudRemedial;
