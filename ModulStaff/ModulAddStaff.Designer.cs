@@ -82,11 +82,12 @@ namespace Ibuprofen.ModulStaff
             // 
             // cboMapel
             // 
+            this.cboMapel.Enabled = false;
             this.cboMapel.FormattingEnabled = true;
             this.cboMapel.Location = new System.Drawing.Point(148, 138);
             this.cboMapel.Name = "cboMapel";
             this.cboMapel.Size = new System.Drawing.Size(182, 21);
-            this.cboMapel.TabIndex = 41;
+            this.cboMapel.TabIndex = 13;
             // 
             // rdoGuruT
             // 
@@ -95,7 +96,7 @@ namespace Ibuprofen.ModulStaff
             this.rdoGuruT.Location = new System.Drawing.Point(232, 99);
             this.rdoGuruT.Name = "rdoGuruT";
             this.rdoGuruT.Size = new System.Drawing.Size(52, 17);
-            this.rdoGuruT.TabIndex = 40;
+            this.rdoGuruT.TabIndex = 12;
             this.rdoGuruT.TabStop = true;
             this.rdoGuruT.Text = "Tidak";
             this.rdoGuruT.UseVisualStyleBackColor = true;
@@ -106,10 +107,11 @@ namespace Ibuprofen.ModulStaff
             this.rdoGuruY.Location = new System.Drawing.Point(147, 99);
             this.rdoGuruY.Name = "rdoGuruY";
             this.rdoGuruY.Size = new System.Drawing.Size(38, 17);
-            this.rdoGuruY.TabIndex = 39;
+            this.rdoGuruY.TabIndex = 11;
             this.rdoGuruY.TabStop = true;
             this.rdoGuruY.Text = "Ya";
             this.rdoGuruY.UseVisualStyleBackColor = true;
+            this.rdoGuruY.CheckedChanged += new System.EventHandler(this.rdoGuruY_CheckedChanged);
             // 
             // nudGaji
             // 
@@ -131,7 +133,7 @@ namespace Ibuprofen.ModulStaff
             0});
             this.nudGaji.Name = "nudGaji";
             this.nudGaji.Size = new System.Drawing.Size(182, 20);
-            this.nudGaji.TabIndex = 38;
+            this.nudGaji.TabIndex = 10;
             this.nudGaji.Value = new decimal(new int[] {
             30000000,
             0,
@@ -183,7 +185,7 @@ namespace Ibuprofen.ModulStaff
             this.txtUniv.Location = new System.Drawing.Point(147, 86);
             this.txtUniv.Name = "txtUniv";
             this.txtUniv.Size = new System.Drawing.Size(183, 20);
-            this.txtUniv.TabIndex = 27;
+            this.txtUniv.TabIndex = 9;
             // 
             // cboTingkat
             // 
@@ -191,7 +193,7 @@ namespace Ibuprofen.ModulStaff
             this.cboTingkat.Location = new System.Drawing.Point(147, 43);
             this.cboTingkat.Name = "cboTingkat";
             this.cboTingkat.Size = new System.Drawing.Size(183, 21);
-            this.cboTingkat.TabIndex = 28;
+            this.cboTingkat.TabIndex = 8;
             // 
             // label7
             // 
@@ -246,7 +248,7 @@ namespace Ibuprofen.ModulStaff
             this.dtpLahir.Location = new System.Drawing.Point(147, 165);
             this.dtpLahir.Name = "dtpLahir";
             this.dtpLahir.Size = new System.Drawing.Size(183, 20);
-            this.dtpLahir.TabIndex = 32;
+            this.dtpLahir.TabIndex = 5;
             // 
             // txtAlamat
             // 
@@ -254,7 +256,7 @@ namespace Ibuprofen.ModulStaff
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
             this.txtAlamat.Size = new System.Drawing.Size(183, 64);
-            this.txtAlamat.TabIndex = 31;
+            this.txtAlamat.TabIndex = 7;
             // 
             // label1
             // 
@@ -280,7 +282,7 @@ namespace Ibuprofen.ModulStaff
             this.cboJk.Location = new System.Drawing.Point(147, 83);
             this.cboJk.Name = "cboJk";
             this.cboJk.Size = new System.Drawing.Size(183, 21);
-            this.cboJk.TabIndex = 29;
+            this.cboJk.TabIndex = 3;
             // 
             // label6
             // 
@@ -296,14 +298,14 @@ namespace Ibuprofen.ModulStaff
             this.txtNotelp.Location = new System.Drawing.Point(147, 208);
             this.txtNotelp.Name = "txtNotelp";
             this.txtNotelp.Size = new System.Drawing.Size(183, 20);
-            this.txtNotelp.TabIndex = 24;
+            this.txtNotelp.TabIndex = 6;
             // 
             // txtNama
             // 
             this.txtNama.Location = new System.Drawing.Point(147, 40);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(183, 20);
-            this.txtNama.TabIndex = 26;
+            this.txtNama.TabIndex = 0;
             // 
             // label9
             // 
@@ -319,7 +321,7 @@ namespace Ibuprofen.ModulStaff
             this.txtKotaLahir.Location = new System.Drawing.Point(147, 127);
             this.txtKotaLahir.Name = "txtKotaLahir";
             this.txtKotaLahir.Size = new System.Drawing.Size(183, 20);
-            this.txtKotaLahir.TabIndex = 25;
+            this.txtKotaLahir.TabIndex = 4;
             // 
             // label8
             // 
@@ -335,7 +337,7 @@ namespace Ibuprofen.ModulStaff
             this.btnSave.Location = new System.Drawing.Point(700, 415);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 33;
+            this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Simpan";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -345,7 +347,7 @@ namespace Ibuprofen.ModulStaff
             this.btnLogout.Location = new System.Drawing.Point(700, 18);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(75, 23);
-            this.btnLogout.TabIndex = 39;
+            this.btnLogout.TabIndex = 17;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
@@ -355,7 +357,7 @@ namespace Ibuprofen.ModulStaff
             this.btnBack.Location = new System.Drawing.Point(26, 12);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 40;
+            this.btnBack.TabIndex = 16;
             this.btnBack.Text = "Kembali";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);

@@ -72,16 +72,8 @@ namespace Ibuprofen.ModulStaff
 
                 string q = $"INSERT INTO {Table.STAFF} " +
                 $" (Nama, IS_Guru, ID_Mapel) " +
-                $" VALUES ('{txtNama.Text}', '{isGuru}'";
-                if (isGuru)
-                {
-                    q += $", '{cboMapel.SelectedValue}');";
-                }
-                else
-                {
-                    q += ");";
-                }
-                q += $" SELECT TOP 1 * FROM {Table.STAFF} ORDER BY ID_Staff DESC ";
+                $" VALUES ('{txtNama.Text}', '{isGuru}', '{cboMapel.SelectedValue}');" +
+                $" SELECT TOP 1 * FROM {Table.STAFF} ORDER BY ID_Staff DESC ";
 
                 SqlCommand cmd = new SqlCommand(q, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -118,6 +110,11 @@ namespace Ibuprofen.ModulStaff
             MainMenu menu = new MainMenu();
             menu.ShowDialog();
             Dispose(); Close();
+        }
+
+        private void rdoGuruY_CheckedChanged(object sender, EventArgs e)
+        {
+            cboMapel.Enabled = rdoGuruY.Checked;
         }
     }
 }

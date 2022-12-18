@@ -31,11 +31,11 @@ namespace Ibuprofen.ModulStaff
         {
             this.btnLogout = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkGuru = new System.Windows.Forms.CheckBox();
             this.lstStaff = new System.Windows.Forms.ListBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabData = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cboJk = new System.Windows.Forms.ComboBox();
             this.txtNotelp = new System.Windows.Forms.TextBox();
@@ -46,8 +46,6 @@ namespace Ibuprofen.ModulStaff
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnUbah = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.cboMapel = new System.Windows.Forms.ComboBox();
             this.rdoGuruT = new System.Windows.Forms.RadioButton();
             this.rdoGuruY = new System.Windows.Forms.RadioButton();
@@ -55,6 +53,8 @@ namespace Ibuprofen.ModulStaff
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnUbah = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabData.SuspendLayout();
@@ -74,7 +74,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox1);
+            this.groupBox2.Controls.Add(this.chkGuru);
             this.groupBox2.Controls.Add(this.lstStaff);
             this.groupBox2.Location = new System.Drawing.Point(12, 54);
             this.groupBox2.Name = "groupBox2";
@@ -83,15 +83,16 @@ namespace Ibuprofen.ModulStaff
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pilih Staff";
             // 
-            // checkBox1
+            // chkGuru
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 324);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(129, 17);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Hanya tampilkan guru";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkGuru.AutoSize = true;
+            this.chkGuru.Location = new System.Drawing.Point(6, 324);
+            this.chkGuru.Name = "chkGuru";
+            this.chkGuru.Size = new System.Drawing.Size(129, 17);
+            this.chkGuru.TabIndex = 4;
+            this.chkGuru.Text = "Hanya tampilkan guru";
+            this.chkGuru.UseVisualStyleBackColor = true;
+            this.chkGuru.CheckedChanged += new System.EventHandler(this.chkGuru_CheckedChanged);
             // 
             // lstStaff
             // 
@@ -114,7 +115,7 @@ namespace Ibuprofen.ModulStaff
             // 
             // tabData
             // 
-            this.tabData.Controls.Add(this.textBox1);
+            this.tabData.Controls.Add(this.txtAlamat);
             this.tabData.Controls.Add(this.label1);
             this.tabData.Controls.Add(this.cboJk);
             this.tabData.Controls.Add(this.txtNotelp);
@@ -132,13 +133,13 @@ namespace Ibuprofen.ModulStaff
             this.tabData.Text = "Data Pribadi";
             this.tabData.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtAlamat
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 234);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 53);
-            this.textBox1.TabIndex = 18;
+            this.txtAlamat.Location = new System.Drawing.Point(152, 234);
+            this.txtAlamat.Multiline = true;
+            this.txtAlamat.Name = "txtAlamat";
+            this.txtAlamat.Size = new System.Drawing.Size(282, 53);
+            this.txtAlamat.TabIndex = 18;
             // 
             // label1
             // 
@@ -233,26 +234,6 @@ namespace Ibuprofen.ModulStaff
             this.tabPage1.Text = "Data Pekerjaan";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnUbah
-            // 
-            this.btnUbah.Location = new System.Drawing.Point(709, 416);
-            this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(75, 23);
-            this.btnUbah.TabIndex = 5;
-            this.btnUbah.Text = "Ubah";
-            this.btnUbah.UseVisualStyleBackColor = true;
-            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
-            // 
-            // btnBack
-            // 
-            this.btnBack.Location = new System.Drawing.Point(12, 12);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 23);
-            this.btnBack.TabIndex = 9;
-            this.btnBack.Text = "Kembali";
-            this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // cboMapel
             // 
             this.cboMapel.FormattingEnabled = true;
@@ -264,7 +245,7 @@ namespace Ibuprofen.ModulStaff
             // rdoGuruT
             // 
             this.rdoGuruT.AutoSize = true;
-            this.rdoGuruT.Location = new System.Drawing.Point(251, 90);
+            this.rdoGuruT.Location = new System.Drawing.Point(251, 97);
             this.rdoGuruT.Name = "rdoGuruT";
             this.rdoGuruT.Size = new System.Drawing.Size(52, 17);
             this.rdoGuruT.TabIndex = 47;
@@ -282,6 +263,7 @@ namespace Ibuprofen.ModulStaff
             this.rdoGuruY.TabStop = true;
             this.rdoGuruY.Text = "Ya";
             this.rdoGuruY.UseVisualStyleBackColor = true;
+            this.rdoGuruY.CheckedChanged += new System.EventHandler(this.rdoGuruY_CheckedChanged);
             // 
             // nudGaji
             // 
@@ -337,6 +319,26 @@ namespace Ibuprofen.ModulStaff
             this.label3.TabIndex = 42;
             this.label3.Text = "Apakah Guru?";
             // 
+            // btnUbah
+            // 
+            this.btnUbah.Location = new System.Drawing.Point(709, 416);
+            this.btnUbah.Name = "btnUbah";
+            this.btnUbah.Size = new System.Drawing.Size(75, 23);
+            this.btnUbah.TabIndex = 5;
+            this.btnUbah.Text = "Ubah";
+            this.btnUbah.UseVisualStyleBackColor = true;
+            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(12, 12);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 9;
+            this.btnBack.Text = "Kembali";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // ModulEditStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,10 +379,10 @@ namespace Ibuprofen.ModulStaff
         private System.Windows.Forms.TextBox txtNama;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkGuru;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAlamat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboMapel;
         private System.Windows.Forms.RadioButton rdoGuruT;
