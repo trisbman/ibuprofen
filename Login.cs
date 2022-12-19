@@ -60,8 +60,6 @@ namespace Ibuprofen
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Continue();
-            return;
             DataRow result = Authenticate();
             string loginTitle = "Login";
 
