@@ -34,11 +34,9 @@ namespace Ibuprofen.ModulSiswa
             // preselect
             cboKelasFilter.SelectedIndex = 0;
             DateTime dateTime = DateTime.Today;
-            dateTimePicker2.Value = dateTime;
-            dateTimePicker1.Value = new DateTime(dateTime.Year, dateTime.Month, 1);
-
-            // validation
             dateTimePicker2.MaxDate = dateTime;
+            dateTimePicker2.Value = dateTime;
+            dateTimePicker1.Value = new DateTime(dateTime.Year, dateTime.Month, 1);            
         }
 
         private void LoadData()
