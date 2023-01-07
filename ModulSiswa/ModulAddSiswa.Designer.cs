@@ -65,15 +65,12 @@ namespace Ibuprofen.ModulSiswa
             // cboTingkat
             // 
             this.cboTingkat.FormattingEnabled = true;
-            this.cboTingkat.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
             this.cboTingkat.Location = new System.Drawing.Point(222, 132);
             this.cboTingkat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboTingkat.Name = "cboTingkat";
             this.cboTingkat.Size = new System.Drawing.Size(272, 28);
-            this.cboTingkat.TabIndex = 28;
+            this.cboTingkat.TabIndex = 35;
+            this.cboTingkat.SelectedIndexChanged += new System.EventHandler(this.cboTingkat_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -101,7 +98,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtNotelp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNotelp.Name = "txtNotelp";
             this.txtNotelp.Size = new System.Drawing.Size(272, 26);
-            this.txtNotelp.TabIndex = 24;
+            this.txtNotelp.TabIndex = 32;
             // 
             // label9
             // 
@@ -119,7 +116,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtKotaLahir.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtKotaLahir.Name = "txtKotaLahir";
             this.txtKotaLahir.Size = new System.Drawing.Size(272, 26);
-            this.txtKotaLahir.TabIndex = 25;
+            this.txtKotaLahir.TabIndex = 30;
             // 
             // label8
             // 
@@ -175,7 +172,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtNisn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNisn.Name = "txtNisn";
             this.txtNisn.Size = new System.Drawing.Size(272, 26);
-            this.txtNisn.TabIndex = 27;
+            this.txtNisn.TabIndex = 34;
             // 
             // label4
             // 
@@ -206,7 +203,7 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Size = new System.Drawing.Size(549, 537);
-            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Pribadi";
             // 
@@ -235,7 +232,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
             this.txtAlamat.Size = new System.Drawing.Size(272, 107);
-            this.txtAlamat.TabIndex = 31;
+            this.txtAlamat.TabIndex = 33;
             // 
             // label1
             // 
@@ -260,22 +257,18 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Size = new System.Drawing.Size(564, 269);
-            this.groupBox2.TabIndex = 31;
+            this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Akademis";
             // 
             // cboKelas
             // 
             this.cboKelas.FormattingEnabled = true;
-            this.cboKelas.Items.AddRange(new object[] {
-            "A",
-            "B",
-            "C"});
             this.cboKelas.Location = new System.Drawing.Point(222, 194);
             this.cboKelas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboKelas.Name = "cboKelas";
             this.cboKelas.Size = new System.Drawing.Size(272, 28);
-            this.cboKelas.TabIndex = 30;
+            this.cboKelas.TabIndex = 36;
             // 
             // label11
             // 
@@ -298,7 +291,7 @@ namespace Ibuprofen.ModulSiswa
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Size = new System.Drawing.Size(564, 245);
-            this.groupBox3.TabIndex = 32;
+            this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Data Orangtua";
             // 
@@ -318,7 +311,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtIbu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtIbu.Name = "txtIbu";
             this.txtIbu.Size = new System.Drawing.Size(272, 26);
-            this.txtIbu.TabIndex = 37;
+            this.txtIbu.TabIndex = 41;
             // 
             // label3
             // 
@@ -336,7 +329,7 @@ namespace Ibuprofen.ModulSiswa
             this.txtAyah.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtAyah.Name = "txtAyah";
             this.txtAyah.Size = new System.Drawing.Size(272, 26);
-            this.txtAyah.TabIndex = 35;
+            this.txtAyah.TabIndex = 40;
             // 
             // button3
             // 
@@ -344,7 +337,7 @@ namespace Ibuprofen.ModulSiswa
             this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(112, 35);
-            this.button3.TabIndex = 33;
+            this.button3.TabIndex = 100;
             this.button3.Text = "Logout";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.btnLogout_Click);
@@ -355,7 +348,7 @@ namespace Ibuprofen.ModulSiswa
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 35);
-            this.button1.TabIndex = 34;
+            this.button1.TabIndex = 200;
             this.button1.Text = "Kembali";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.btnBack_Click);
@@ -374,6 +367,7 @@ namespace Ibuprofen.ModulSiswa
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "ModulAddSiswa";
             this.Text = "Menu Tambah Siswa";
+            this.Load += new System.EventHandler(this.ModulAddSiswa_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

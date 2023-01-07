@@ -48,9 +48,9 @@ namespace Ibuprofen.ModulKurikulum
                 connection.Open();
 
                 #region load data from db
-                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM " + TABLE.COURSE, connection);
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, Table.COURSE);
+                adapter.Fill(dataSet, TABLE.COURSE);
                 #endregion
 
                 connection.Close();
@@ -60,13 +60,13 @@ namespace Ibuprofen.ModulKurikulum
 
             #region set primary keys
             DataColumn[] staffKey = new DataColumn[1];
-            staffKey[0] = dataSet.Tables[Table.COURSE].Columns[0];
-            dataSet.Tables[Table.COURSE].PrimaryKey = staffKey;
+            staffKey[0] = dataSet.Tables[TABLE.COURSE].Columns[0];
+            dataSet.Tables[TABLE.COURSE].PrimaryKey = staffKey;
             #endregion
 
             lstMapel.DataSource = dsView;
-            lstMapel.DisplayMember = Table.COURSE + ".Nama";
-            lstMapel.ValueMember = Table.COURSE + ".ID_Mapel";
+            lstMapel.DisplayMember = TABLE.COURSE + ".Nama";
+            lstMapel.ValueMember = TABLE.COURSE + ".ID_Mapel";
         }
 
         #region Database Update
@@ -83,7 +83,7 @@ namespace Ibuprofen.ModulKurikulum
         {
             DataRowView courseRv = (DataRowView)lstMapel.SelectedItem;
             int courseId = int.Parse(courseRv["ID_Mapel"].ToString());
-            string q = $"UPDATE {Table.COURSE}" +
+            string q = $"UPDATE {TABLE.COURSE}" +
                 $" SET Nama='{txtNama.Text}'," +
                 $" KKM_Tugas='{nudTugas.Value}'," +
                 $" KKM_Tugas_Tambahan='{nudTugasP.Value}'," +
@@ -159,7 +159,7 @@ namespace Ibuprofen.ModulKurikulum
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string q = $"INSERT INTO {Table.COURSE}" +
+                string q = $"INSERT INTO {TABLE.COURSE}" +
                     $" (Nama) VALUES ('{name}') ";
                 SqlCommand cmd = new SqlCommand(q, connection);
                 cmd.ExecuteNonQuery();
@@ -171,7 +171,7 @@ namespace Ibuprofen.ModulKurikulum
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string q = $"DELETE FROM {Table.COURSE}" +
+                string q = $"DELETE FROM {TABLE.COURSE}" +
                     $" WHERE ID_Mapel = {id} ";
                 SqlCommand cmd = new SqlCommand(q, connection);
                 cmd.ExecuteNonQuery();

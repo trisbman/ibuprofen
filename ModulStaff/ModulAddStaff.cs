@@ -36,15 +36,15 @@ namespace Ibuprofen.ModulStaff
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM " + TABLE.COURSE, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, Table.COURSE);
+                adapter.Fill(dataSet, TABLE.COURSE);
             }
             dsView = dataSet.DefaultViewManager;
 
             cboMapel.DataSource = dsView;
-            cboMapel.DisplayMember = Table.COURSE + ".Nama";
-            cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
+            cboMapel.DisplayMember = TABLE.COURSE + ".Nama";
+            cboMapel.ValueMember = TABLE.COURSE + ".ID_Mapel";
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -70,10 +70,10 @@ namespace Ibuprofen.ModulStaff
                 connection.Open();
                 bool isGuru = rdoGuruY.Checked;
 
-                string q = $"INSERT INTO {Table.STAFF} " +
+                string q = $"INSERT INTO {TABLE.STAFF} " +
                 $" (Nama, IS_Guru, ID_Mapel) " +
                 $" VALUES ('{txtNama.Text}', '{isGuru}', '{cboMapel.SelectedValue}');" +
-                $" SELECT TOP 1 * FROM {Table.STAFF} ORDER BY ID_Staff DESC ";
+                $" SELECT TOP 1 * FROM {TABLE.STAFF} ORDER BY ID_Staff DESC ";
 
                 SqlCommand cmd = new SqlCommand(q, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -83,7 +83,7 @@ namespace Ibuprofen.ModulStaff
 
                 int staffId = row.Field<int>("ID_Staff");
                 string ttl = $"{txtKotaLahir.Text}, {dtpLahir.Value:yyyy-MM-dd}";
-                q = $"INSERT INTO {Table.STAFF_DATA} " +
+                q = $"INSERT INTO {TABLE.STAFF_DATA} " +
                     $" (ID_Staff, TTL, Jenis_Kelamin," +
                     $" No_Telepon, Alamat, Universitas, Pendidikan, Gaji) " +
                     $" VALUES" +

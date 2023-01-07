@@ -38,16 +38,16 @@ namespace Ibuprofen.ModulStaff
                 connection.Open();
 
                 #region load data from db
-                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.COURSE, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM " + TABLE.COURSE, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, Table.COURSE);
+                adapter.Fill(dataSet, TABLE.COURSE);
 
-                string q = $"SELECT * FROM {Table.STAFF} s" +
-                    $" JOIN {Table.STAFF_DATA} sd" +
+                string q = $"SELECT * FROM {TABLE.STAFF} s" +
+                    $" JOIN {TABLE.STAFF_DATA} sd" +
                     $" ON s.ID_Staff = sd.ID_Staff";
                 command.CommandText = q;
                 adapter = new SqlDataAdapter(command);
-                adapter.Fill(dataSet, Table.STAFF);
+                adapter.Fill(dataSet, TABLE.STAFF);
                 #endregion
 
                 connection.Close();
@@ -57,17 +57,17 @@ namespace Ibuprofen.ModulStaff
 
             #region set primary keys
             DataColumn[] staffKey = new DataColumn[1];
-            staffKey[0] = dataSet.Tables[Table.STAFF].Columns[0];
-            dataSet.Tables[Table.STAFF].PrimaryKey = staffKey;
+            staffKey[0] = dataSet.Tables[TABLE.STAFF].Columns[0];
+            dataSet.Tables[TABLE.STAFF].PrimaryKey = staffKey;
             #endregion
 
             lstStaff.DataSource = dsView;
-            lstStaff.DisplayMember = Table.STAFF + ".Nama";
-            lstStaff.ValueMember = Table.STAFF + ".ID_Staff";
+            lstStaff.DisplayMember = TABLE.STAFF + ".Nama";
+            lstStaff.ValueMember = TABLE.STAFF + ".ID_Staff";
 
             cboMapel.DataSource = dsView;
-            cboMapel.DisplayMember = Table.COURSE + ".Nama";
-            cboMapel.ValueMember = Table.COURSE + ".ID_Mapel";
+            cboMapel.DisplayMember = TABLE.COURSE + ".Nama";
+            cboMapel.ValueMember = TABLE.COURSE + ".ID_Mapel";
 
             InitGuruView();
         }
@@ -75,9 +75,9 @@ namespace Ibuprofen.ModulStaff
         private void InitGuruView()
         {
             string ex = $"IS_Guru='true'";
-            DataRow[] rows = dsView.DataSet.Tables[Table.STAFF].Select(ex);
+            DataRow[] rows = dsView.DataSet.Tables[TABLE.STAFF].Select(ex);
             DataSet dataSet = new DataSet();
-            DataTable dataTable = dsView.DataSet.Tables[Table.STAFF].Clone();
+            DataTable dataTable = dsView.DataSet.Tables[TABLE.STAFF].Clone();
 
             foreach (DataRow row in rows)
             {
@@ -167,7 +167,7 @@ namespace Ibuprofen.ModulStaff
 
             #region staff
             int staffId = int.Parse(staffRv["ID_Staff"].ToString());
-            string q = $"UPDATE {Table.STAFF}" +
+            string q = $"UPDATE {TABLE.STAFF}" +
                 $" SET Nama='{txtNama.Text}', " +
                 $" IS_Guru='{rdoGuruY.Checked}'," +
                 $" ID_Mapel='{cboMapel.SelectedValue}'" +
@@ -177,7 +177,7 @@ namespace Ibuprofen.ModulStaff
             #endregion
 
             #region staff data
-            q = $"UPDATE {Table.STAFF_DATA}" +
+            q = $"UPDATE {TABLE.STAFF_DATA}" +
                 $" SET No_Telepon='{txtNotelp.Text}'," +
                 $" Alamat='{txtAlamat.Text}', " +
                 $" Gaji='{nudGaji.Value}' " +

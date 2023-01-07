@@ -25,7 +25,7 @@ namespace Ibuprofen
         private DataRow Authenticate()
         {
             DataSet dataSet = LoadData();
-            return dataSet.Tables[Table.LOGIN].Rows.Find(txtUsername.Text);
+            return dataSet.Tables[TABLE.LOGIN].Rows.Find(txtUsername.Text);
         }
 
         private DataSet LoadData()
@@ -34,15 +34,15 @@ namespace Ibuprofen
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM " + Table.LOGIN, connection);
+                SqlCommand command = new SqlCommand("SELECT * FROM " + TABLE.LOGIN, connection);
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
 
                 DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, Table.LOGIN);
+                adapter.Fill(dataSet, TABLE.LOGIN);
 
                 var key = new DataColumn[1];
-                key[0] = dataSet.Tables[Table.LOGIN].Columns[0];
-                dataSet.Tables[Table.LOGIN].PrimaryKey = key;
+                key[0] = dataSet.Tables[TABLE.LOGIN].Columns[0];
+                dataSet.Tables[TABLE.LOGIN].PrimaryKey = key;
 
                 connection.Close();
                 return dataSet;
