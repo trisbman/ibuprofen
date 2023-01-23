@@ -288,7 +288,7 @@ namespace Ibuprofen.ModulSiswa
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnLogout);
             this.Name = "ModulReportSiswa";
-            this.Text = "ModulReportSiswa";
+            this.Text = "Menu Laporan Siswa";
             this.Load += new System.EventHandler(this.ModulReportSiswa_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
